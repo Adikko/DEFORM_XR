@@ -5,20 +5,25 @@
     overflow: hidden;
 }
 
-body {
-    background-color: black;
-}
-
 @font-face {
     font-family: "Poppins-Black";
     @import "../src/Poppins/Poppins-Black.ttf";
 }
 
+.deform_xr {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    background-color: black;
+}
+
 .deform_xr_button {
     background-color: #d04747;
+    margin: auto;  
     border: none;
     color: black;
-    padding: 15px 32px;
+    padding: calc(2vh + 2vw);
     text-align: center;
     text-decoration: none;
     display: inline-block;

@@ -1,12 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "Poppins-Black";
+}
+
+.deform_xr {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+}
+
 .deform_xr_button {
-  background-color: #4CAF50;
-  /* Green */
+  background-color: #d04747;
+  margin: auto;
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: black;
+  padding: calc(2vh + 2vw);
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: "Poppins-Black", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
