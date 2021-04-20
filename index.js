@@ -6,15 +6,29 @@ async function activateXR() {
   
     const scene = new THREE.Scene();
   
-    // The cube will have a different color on each side.
-    const materials = [
-      new THREE.MeshBasicMaterial({color: 0xff0000}),
-      new THREE.MeshBasicMaterial({color: 0x0000ff}),
-      new THREE.MeshBasicMaterial({color: 0x00ff00}),
-      new THREE.MeshBasicMaterial({color: 0xff00ff}),
-      new THREE.MeshBasicMaterial({color: 0x00ffff}),
-      new THREE.MeshBasicMaterial({color: 0xffff00})
-    ];
+
+    // Loading a model
+
+    let logo3d = null;
+
+    const mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load('./3D/3d_logo_opened.mtl', function(materials) {
+        materials.preload();
+        const objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load('./3D/3d_logo_opened.obj', function(object) {
+
+            logo3d = object; //accessing the global variable
+            logo3d.position.x = -10;
+            logo3d.position.y = 0;
+            logo3d.position.z = 0;
+            logo3d.scale.x = 10;
+            logo3d.scale.y = 10;
+            logo3d.scale.z = 10;
+            logo3d.rotation.x = Math.PI * 0.25;
+            logo3d.rotation.y = Math.PI * -0.25;
+        });
+    });
   
     // Create the cube and add it to the demo scene.
     const cube = new THREE.Mesh(new THREE.BoxBufferGeometry(0.2, 0.2, 0.2), materials);
