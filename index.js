@@ -18,16 +18,9 @@ async function activateXR() {
       objLoader.load('./3D/3d_logo_opened.obj', function(object) {
 
         logo3d = object; //accessing the global variable
-        /*
-        logo3d.position.x = -10;
-        logo3d.position.y = 0;
-        logo3d.position.z = 0;
-        logo3d.scale.x = 10;
-        logo3d.scale.y = 10;
-        logo3d.scale.z = 10;
-        logo3d.rotation.x = Math.PI * 0.25;
-        logo3d.rotation.y = Math.PI * -0.25;
-        */
+        logo3d.scale.x = 0.1;
+        logo3d.scale.y = 0.1;
+        logo3d.scale.z = 0.1;
     });
   });
 
