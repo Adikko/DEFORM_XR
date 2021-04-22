@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: "Poppins-Black";
-    @import "../src/Poppins/Poppins-Black.ttf";
+    src: url("../src/Poppins/Poppins-Black.ttf") format("truetype");
 }
 
 .deform_xr {
@@ -27,6 +27,13 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: calc(2vh + 2vw);
     font-family: "Poppins-Black", sans-serif;
+    animation: rotateButton 7s infinite;
+}
+
+@keyframes rotateButton {
+    0% {transform: rotateZ(-15deg)};
+    50% {transform: rotateZ(15deg)};
+    100% {transform: rotateZ(-15deg)};
 }

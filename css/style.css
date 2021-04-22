@@ -10,6 +10,7 @@
 
 @font-face {
   font-family: "Poppins-Black";
+  src: url("../src/Poppins/Poppins-Black.ttf") format("truetype");
 }
 
 .deform_xr {
@@ -31,7 +32,39 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: calc(2vh + 2vw);
   font-family: "Poppins-Black", sans-serif;
+  -webkit-animation: rotateButton 7s infinite;
+          animation: rotateButton 7s infinite;
+}
+
+@-webkit-keyframes rotateButton {
+  0% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(15deg);
+            transform: rotateZ(15deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+}
+
+@keyframes rotateButton {
+  0% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(15deg);
+            transform: rotateZ(15deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
