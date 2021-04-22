@@ -68,13 +68,17 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   // Reticle helps the user with placing the 3D object in the scene
-  const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load('./3D/reticle.glb', function(gltf) {
-      reticle = gltf.scene;
-      reticle.visible = false;
-      scene.add(reticle);
-  })
+  mtlLoader.load('./3D/reticle.mtl', function(materials) {
+    materials.preload();
+    const objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    objLoader.load('./3D/reticle.obj', function(object) {
+
+      reticle = object;
+    });
+  });
+  scene.add(reticle);
 
   session.addEventListener("select", (event) => {
       if (logo3d) {
