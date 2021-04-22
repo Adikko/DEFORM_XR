@@ -68,8 +68,9 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   // Reticle helps the user with placing the 3D object in the scene
+  const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load("./3D/reticle.glb", function(gltf) {
+  loader.load('./3D/reticle.glb', function(gltf) {
       reticle = gltf.scene;
       reticle.visible = false;
       scene.add(reticle);
