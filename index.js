@@ -26,10 +26,7 @@ async function activateXR() {
       objLoader.load('./3D/3d_logo_opened.obj', function(object) {
 
         logo3d = object; //accessing the global variable
-        logo3d.scale.x = 0.1;
-        logo3d.scale.y = 0.1;
-        logo3d.scale.z = 0.1;
-        logo3d.position.z = 5;
+        logo3d.scale.set(0.05,0.05,0.05);
     });
   });
 
@@ -71,13 +68,15 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   // Reticle helps the user with placing the 3D object in the scene
-  const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
-      reticle = gltf.scene;
-      reticle.visible = false;
-      scene.add(reticle);
-  })
+  mtlLoader.load('./3D/reticle.mtl', function(materials) {
+    materials.preload();
+    const objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    objLoader.load('./3D/reticle.obj', function(object) {
+      reticle = object;
+    });
+  });
 
   session.addEventListener("select", (event) => {
       if (logo3d) {
