@@ -70,10 +70,10 @@ async function activateXR() {
   // Reticle helps the user with placing the 3D object in the scene
   const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load('./3D/reticle.gltf', function(gltf) {
-      reticle = gltf.scene;
-      reticle.visible = false;
-      scene.add(reticle);
+  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
+    reticle = gltf.scene;
+    reticle.visible = false;
+    scene.add(reticle);
   })
 
   session.addEventListener("select", (event) => {
