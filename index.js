@@ -6,6 +6,8 @@ This app contains parts of code copied from: developers.google.com/ar/develop/we
 developers.google.com code snippets are licensed under the Creative Commons Attribution 4.0 License. Further reading: https://creativecommons.org/licenses/by/4.0/
 */
 
+const clock = new THREE.Clock(); //importing the clock in order to make the animations take as much time on any refresh rate screen 
+
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
@@ -87,6 +89,9 @@ async function activateXR() {
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
     
+    // Measuring elapsed time
+    const elapsedTime = clock.getElapsedTime();
+
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
 
@@ -115,7 +120,7 @@ async function activateXR() {
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
           // animate over time
-          logo3d.scale.y = time*0.0000001;
+          logo3d.scale.y = (Math.sin(elapsedTime*0.3));
       }
 
       // Render the scene with THREE.WebGLRenderer.
