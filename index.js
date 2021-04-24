@@ -90,11 +90,6 @@ async function activateXR() {
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
 
-    // Add a clock to measure time
-    const clock = new THREE.Clock();
-    const elapsedTime = clock.getElapsedTime();
-    logo3d.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
-
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
 
@@ -119,6 +114,11 @@ async function activateXR() {
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
+
+          // Add a clock to measure time
+          const clock = new THREE.Clock();
+          const elapsedTime = clock.getElapsedTime();
+          logo3d.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
       }
 
       // Render the scene with THREE.WebGLRenderer.
