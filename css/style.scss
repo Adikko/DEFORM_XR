@@ -22,7 +22,28 @@ h2 {
     color: #d04747;
 }
 
-.deform_xr_instructions {
+
+.deform_xr_instructions_mobile {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        position: absolute;
+        width: 40vw;
+        height: 40vh;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: 0vh;
+        display: flex;
+        flex-direction: column;
+    }
+    display: none;
+}
+
+.deform_xr_instructions_desktop {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        display: none;    
+    }
     position: absolute;
     width: 40vw;
     height: 40vh;
@@ -43,17 +64,20 @@ h2 {
 }
 
 .deform_xr_button {
-    background-color: #d04747;
-    margin: auto;  
-    border: none;
-    color: black;
-    padding: calc(2vh + 2vw);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: calc(2vh + 2vw);
-    font-family: "Poppins-Black", sans-serif;
-    animation: rotateButton 7s infinite;
+    @media only screen and (hover: none) and (pointer: coarse) {
+        background-color: #d04747;
+        margin: auto;  
+        border: none;
+        color: black;
+        padding: calc(2vh + 2vw);
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: calc(2vh + 2vw);
+        font-family: "Poppins-Black", sans-serif;
+        animation: rotateButton 7s infinite;      
+    }
+    display: none; 
 }
 
 @keyframes rotateButton {

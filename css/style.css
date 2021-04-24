@@ -25,7 +25,32 @@ h2 {
   color: #d04747;
 }
 
-.deform_xr_instructions {
+.deform_xr_instructions_mobile {
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_xr_instructions_mobile {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.deform_xr_instructions_desktop {
   position: absolute;
   width: 40vw;
   height: 40vh;
@@ -35,6 +60,12 @@ h2 {
   right: 0;
   text-align: center;
   bottom: 0vh;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_xr_instructions_desktop {
+    display: none;
+  }
 }
 
 .deform_xr {
@@ -48,18 +79,24 @@ h2 {
 }
 
 .deform_xr_button {
-  background-color: #d04747;
-  margin: auto;
-  border: none;
-  color: black;
-  padding: calc(2vh + 2vw);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: calc(2vh + 2vw);
-  font-family: "Poppins-Black", sans-serif;
-  -webkit-animation: rotateButton 7s infinite;
-          animation: rotateButton 7s infinite;
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_xr_button {
+    background-color: #d04747;
+    margin: auto;
+    border: none;
+    color: black;
+    padding: calc(2vh + 2vw);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(2vh + 2vw);
+    font-family: "Poppins-Black", sans-serif;
+    -webkit-animation: rotateButton 7s infinite;
+            animation: rotateButton 7s infinite;
+  }
 }
 
 @-webkit-keyframes rotateButton {

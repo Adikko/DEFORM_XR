@@ -86,8 +86,14 @@ async function activateXR() {
 
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
+    
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
+
+    // Add a clock to measure time
+    const clock = new THREE.Clock();
+    const elapsedTime = clock.getElapsedTime();
+    logo3d.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
 
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
