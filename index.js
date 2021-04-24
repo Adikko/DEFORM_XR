@@ -115,7 +115,7 @@ async function activateXR() {
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
           // animate over time
-          logo3d.scale.y = (Math.sin(time*0.3) + (Math.PI * 0.37)) * 100;
+          logo3d.scale.y = (Math.sin(time*0.3));
       }
 
       // Render the scene with THREE.WebGLRenderer.
