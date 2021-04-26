@@ -93,15 +93,17 @@ async function activateXR() {
     const deltaTime = (time - lastFrameTime) * 0.001; // Converting the time into milisecounds
     lastFrameTime = time;
 
-    // Storing the scale value and applying the transformation
+    // Storing the scale value
     const yDeltaTime = (Math.sin(deltaTime) + (Math.PI * 0.37) * 100);
-    clone.scale.y = yDeltaTime;
 
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
 
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
+
+    // Applying transformation to the model
+    clone.scale.y = yDeltaTime;
 
     // Retrieve the pose of the device.
     // XRFrame.getViewerPose can return null while the session attempts to establish tracking.
