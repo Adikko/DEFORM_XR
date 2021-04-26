@@ -84,8 +84,18 @@ async function activateXR() {
       }
   });
 
+  let lastFrameTime = 0;
+
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
+
+    // Calculate the time passed after each refresh
+    const deltaTime = (time - lastFrameTime) * 0.001; // Converting the time into milisecounds
+    lastFrameTime = time;
+
+    // Storing the scale value and applying the transformation
+    const yDeltaTime = (Math.sin(deltaTime) + (Math.PI * 0.37) * 100);
+    clone.scale.y = yDeltaTime;
 
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
@@ -114,7 +124,6 @@ async function activateXR() {
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
-          clone.scale.y = (Math.sin(time) + (Math.PI * 0.37) * 100);
       }
 
       // Render the scene with THREE.WebGLRenderer.
