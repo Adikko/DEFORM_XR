@@ -125,14 +125,13 @@ async function activateXR() {
           reticle.updateMatrixWorld(true);
       }
 
-      
-      // Applying transformation to the model
-      clone.scale.y = yDeltaTime;
-
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
     }
 
   }
+  scene.startFrame();
   session.requestAnimationFrame(onXRFrame);
+  scene.drawXRFrame(frame, pose);
+  scene.endFrame();
 }
