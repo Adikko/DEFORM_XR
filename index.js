@@ -102,9 +102,6 @@ async function activateXR() {
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
 
-    // Applying transformation to the model
-    clone.scale.y = yDeltaTime;
-
     // Retrieve the pose of the device.
     // XRFrame.getViewerPose can return null while the session attempts to establish tracking.
     const pose = frame.getViewerPose(referenceSpace);
@@ -127,6 +124,10 @@ async function activateXR() {
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
       }
+
+      
+      // Applying transformation to the model
+      clone.scale.y = yDeltaTime;
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
