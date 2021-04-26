@@ -116,11 +116,11 @@ async function activateXR() {
           reticle.updateMatrixWorld(true);
       }
 
-      clone.scale.y = (Math.sin(time*0.3) + (Math.PI * 0.37) * 100);
-
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
     }
+
+    clone.scale.y = (Math.sin(time*0.3) + (Math.PI * 0.37) * 100);
   }
   session.requestAnimationFrame(onXRFrame);
 }
