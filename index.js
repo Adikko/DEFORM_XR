@@ -122,8 +122,8 @@ async function activateXR() {
           reticle.updateMatrixWorld(true);
       }
 
-      if (clone !== null) {
-        clone.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
+      if (logo3d !== null) {
+        logo3d.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
       }
 
       // Render the scene with THREE.WebGLRenderer.
