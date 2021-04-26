@@ -114,7 +114,7 @@ async function activateXR() {
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
-          clone.scale.y = (Math.sin(time*0.3) + (Math.PI * 0.37) * 100);
+          clone.scale.y = (Math.sin(time) + (Math.PI * 0.37) * 100);
       }
 
       // Render the scene with THREE.WebGLRenderer.
