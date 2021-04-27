@@ -85,7 +85,6 @@ async function activateXR() {
   });
 
   function onWindowAnimationFrame(time) {
-    window.requestAnimationFrame(onWindowAnimationFrame);
     if (logo3d !== null) {
       logo3d.rotate.x = time;
     }
