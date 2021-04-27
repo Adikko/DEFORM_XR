@@ -84,17 +84,11 @@ async function activateXR() {
       }
   });
 
-  function onWindowAnimationFrame(time) {
-    if (clone !== null) {
-      clone.rotate.x = time;
-    }
-  }
-
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
     // Queue up the next draw request.
-    session.requestAnimationFrame(onWindowAnimationFrame);
+    session.requestAnimationFrame(onXRFrame);
 
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
