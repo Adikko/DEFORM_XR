@@ -116,8 +116,8 @@ async function activateXR() {
           reticle.updateMatrixWorld(true);
       }
 
-      if (clone != null) {
-        clone.rotate.x = time;
+      if (logo3d !== null) {
+        logo3d.rotate.x = time;
       }
 
       // Render the scene with THREE.WebGLRenderer.
