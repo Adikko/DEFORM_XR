@@ -84,18 +84,8 @@ async function activateXR() {
       }
   });
 
-  //clock
-  const clock = new THREE.Clock(); //importing the clock in order to make the animations take as much time on any refresh rate screen
-
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
-
-    //measuring time
-    const elapsedTime = clock.getElapsedTime();
-
-    if (logo3d !== null) {
-      logo3d.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
-    }
 
     // Queue up the next draw request.
     session.requestAnimationFrame(onXRFrame);
@@ -124,6 +114,10 @@ async function activateXR() {
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
+      }
+
+      if (clone != null) {
+        clone.rotate.x = time;
       }
 
       // Render the scene with THREE.WebGLRenderer.
