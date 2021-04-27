@@ -84,6 +84,9 @@ async function activateXR() {
       }
   });
 
+  // Time is stored as a global variable
+  let lastFrameTime = 0;
+
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
@@ -92,6 +95,10 @@ async function activateXR() {
 
     // Bind the graphics framebuffer to the baseLayer's framebuffer
     gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
+    
+    // Time measurement
+    const deltaTime = (time - lastFrameTime) * 0.001;
+    lastFrameTime = time;
 
     // Retrieve the pose of the device.
     // XRFrame.getViewerPose can return null while the session attempts to establish tracking.
@@ -114,10 +121,9 @@ async function activateXR() {
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
-      }
-
-      if (logo3d !== null) {
-        logo3d.rotate.x = time;
+          if (logo3d !== null) {
+            logo3d.rotate.x = deltaTime;
+          }
       }
 
       // Render the scene with THREE.WebGLRenderer.
