@@ -82,7 +82,8 @@ async function activateXR() {
       if (reticle.visible) {
         if (logo3d) {
           const clone = logo3d.clone();
-          clone.position.copy(reticle.position);
+          clone.visible = true;
+          clone.position = reticle.position;
           scene.addNode(clone);
           models.push(clone);
           if (models.length > MAX_MODELS_COUNT) {
