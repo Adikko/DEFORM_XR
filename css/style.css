@@ -24,13 +24,13 @@
 }
 
 h1 {
-  font-size: calc(1.5vh + 1.5vw);
+  font-size: calc(1vh + 1vw);
   font-family: "Poppins-Medium", sans-serif;
   color: #d04747;
 }
 
 h2 {
-  font-size: calc(1vh + 1vw);
+  font-size: calc(0.8vh + 0.8vw);
   font-family: "Poppins-ExtraLight", sans-serif;
   color: #d04747;
 }
@@ -56,13 +56,60 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 80vh;
-  width: 60vw;
+  width: 40vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
   right: 0px;
   bottom: 0px;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_menu {
+    padding: 0px;
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 80vh;
+    width: 80vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    right: 0px;
+    bottom: 10vh;
+  }
+}
+
+.deform_logo_divider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.deform_logo_empty {
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_logo_empty {
+    padding: 10vw;
+    width: 10vw;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
+            box-shadow: 0px 0px 0px 10px #d04747 inset;
+  }
 }
 
 .deform_logo {
@@ -75,8 +122,8 @@ h2 {
 
 @media only screen and (hover: none) and (pointer: coarse) {
   .deform_logo {
-    padding: 10vw 20vw 10vw 10vw;
-    width: 30vw;
+    padding: 10vw;
+    width: 10vw;
     background-color: rgba(0, 0, 0, 0);
     z-index: 3;
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
@@ -134,11 +181,46 @@ h2 {
   }
 }
 
-.deform_button_container {
+.deform_button {
   background-color: #d04747;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
   width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.deform_button_empty {
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_button_empty {
+    background-color: black;
+    width: 30vw;
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.deform_button_container {
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_button_container {
+    width: 30vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .deform_xr_button {
@@ -150,14 +232,22 @@ h2 {
     background-color: #d04747;
     border: none;
     color: black;
-    padding: 10vw 20vw 10vw 10vw;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: calc(4vh + 4vw);
+    height: 30vw;
+    padding: 10vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: calc(2vh + 2vw);
     font-family: "Poppins-Black", sans-serif;
     -webkit-animation: rotateButton 7s infinite;
             animation: rotateButton 7s infinite;
+    float: right;
   }
 }
 

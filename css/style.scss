@@ -21,13 +21,13 @@
 }
 
 h1 {
-    font-size: calc(1.5vh + 1.5vw);
+    font-size: calc(1vh + 1vw);
     font-family: "Poppins-Medium", sans-serif;
     color: #d04747;
 }
 
 h2 {
-    font-size: calc(1vh + 1vw);
+    font-size: calc(0.8vh + 0.8vw);
     font-family: "Poppins-ExtraLight", sans-serif;
     color: #d04747;
 }
@@ -41,22 +41,50 @@ h2 {
 }
 
 .deform_menu {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        width: 80vw;
+        justify-content: center;
+        position: absolute;
+        right: 0px;
+        bottom: 10vh;
+    }
     padding: 0px;
     margin: 0px;
     display: flex;
     flex-direction: column;
     height: 80vh;
-    width: 60vw;
+    width: 40vw;
     justify-content: center;
     position: absolute;
     right: 0px;
     bottom: 0px;
 }
 
+.deform_logo_divider {
+    display: flex;
+    flex-direction: row;
+}
+
+.deform_logo_empty {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        padding: 10vw;
+        width: 10vw;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        z-index: 3;
+        box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+    }
+    display: none;
+}
+
 .deform_logo {
     @media only screen and (hover: none) and (pointer: coarse) {
-        padding: 10vw 20vw 10vw 10vw;
-        width: 30vw;
+        padding: 10vw;
+        width: 10vw;
         background-color: rgba($color: #000000, $alpha: 0.0);
         z-index: 3;
         box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
@@ -99,10 +127,30 @@ h2 {
     flex-direction: column;
 }
 
-.deform_button_container {
+.deform_button {
     background-color: #d04747;
     box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div
     width: 60vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.deform_button_empty {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        background-color: black;
+        width: 30vw;
+        border: none;
+        display: flex;
+    }
+    display: none; 
+}
+
+.deform_button_container {
+    @media only screen and (hover: none) and (pointer: coarse) {
+        width: 30vw;
+        display: flex;
+    }
+    display: none; 
 }
 
 .deform_xr_button {
@@ -110,13 +158,15 @@ h2 {
         background-color: #d04747;
         border: none;
         color: black;
-        padding: 10vw 20vw 10vw 10vw;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: calc(4vh + 4vw);
+        height: 30vw;
+        padding: 10vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: calc(2vh + 2vw);
         font-family: "Poppins-Black", sans-serif;
-        animation: rotateButton 7s infinite;      
+        animation: rotateButton 7s infinite;
+        float: right;
     }
     display: none; 
 }
