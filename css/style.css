@@ -61,8 +61,8 @@ h2 {
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  right: 0px;
-  bottom: 0px;
+  right: 30vw;
+  bottom: 10vh;
 }
 
 @media only screen and (hover: none) and (pointer: coarse) {
@@ -141,6 +141,8 @@ h2 {
 
 @media only screen and (hover: none) and (pointer: coarse) {
   .deform_xr_instructions_mobile {
+    -webkit-transform: translate(0px, -10px);
+            transform: translate(0px, -10px);
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
             box-shadow: 0px 0px 0px 10px #d04747 inset;
     padding: 10vw 20vw 10vw 10vw;
@@ -159,6 +161,8 @@ h2 {
 }
 
 .deform_xr_instructions_desktop {
+  -webkit-transform: translate(0px, -10px);
+          transform: translate(0px, -10px);
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
   padding: 5vw;
@@ -182,6 +186,8 @@ h2 {
 }
 
 .deform_button {
+  -webkit-transform: translate(0px, -10px);
+          transform: translate(0px, -10px);
   background-color: #d04747;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;

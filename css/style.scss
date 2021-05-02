@@ -61,8 +61,8 @@ h2 {
     width: 40vw;
     justify-content: center;
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 30vw;
+    bottom: 10vh;
 }
 
 .deform_logo_divider {
@@ -101,6 +101,7 @@ h2 {
 
 .deform_xr_instructions_mobile {
     @media only screen and (hover: none) and (pointer: coarse) {
+        transform: translate(0px, -10px); //hide the underside of the border
         box-shadow:0px 0px 0px 10px #d04747 inset;
         padding: 10vw 20vw 10vw 10vw;
         width: 30vw;
@@ -117,6 +118,7 @@ h2 {
     @media only screen and (hover: none) and (pointer: coarse) {
         display: none;    
     }
+    transform: translate(0px, -10px); //hide the underside of the border
     box-shadow:0px 0px 0px 10px #d04747 inset;
     padding: 5vw;
     width: 30vw;
@@ -128,6 +130,7 @@ h2 {
 }
 
 .deform_button {
+    transform: translate(0px, -10px); //hide the underside of the border
     background-color: #d04747;
     box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div
     width: 60vw;
