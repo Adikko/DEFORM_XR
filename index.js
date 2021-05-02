@@ -75,11 +75,19 @@ async function activateXR() {
     scene.add(reticle);
   })
 
+  const MAX_MODELS_COUNT = 5;
+  let models = [];
+
   session.addEventListener("select", (event) => {
       if (logo3d) {
         const clone = logo3d.clone();
         clone.position.copy(reticle.position);
-        scene.add(clone);
+        scene.addNode(clone);
+        models.push(clone);
+        if (models.length > MAX_MODELS_COUNT) {
+          let oldClone = models.shift();
+          scene.removeNode(oldClone);
+        }
       }
   });
 
@@ -133,7 +141,7 @@ async function activateXR() {
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
         reticle.updateMatrixWorld(true);
-    }
+      }
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
