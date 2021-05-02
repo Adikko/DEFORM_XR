@@ -43,12 +43,24 @@ h2 {
     height: 100%;
     position: absolute;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #93FAA5;
     @media (prefers-color-scheme: dark) {
         background-color: #461661;
     }
     z-index: 999;
     transition: all 1s ease;
+}
+
+.deform_content_load_indicator {
+    width: calc(5vw + 5vh);
+    height: calc(5vw + 5vh);
+    background-color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        background-color: #D28DFA;
+    }
+    animation: loading 1s infinite;
 }
 
 .deform_content_load_finished {
@@ -271,19 +283,37 @@ canvas {
 }
 
 @keyframes rotateButton {
-    0% {transform: rotateZ(-15deg)};
-    50% {transform: rotateZ(15deg)};
-    100% {transform: rotateZ(-15deg)};
+    0% {
+        transform: rotateZ(-15deg)
+    };
+    50% {
+        transform: rotateZ(15deg)
+    };
+    100% {
+        transform: rotateZ(-15deg)
+    };
 }
 
 @keyframes landingPage_fade {
     0% {
-      opacity: 0%;
+        opacity: 0%;
     }
     10% {
-        opacity: 0%;
-      }
+        opacity: 0%; //adding a bit of delay
+    }
     100% {
-      opacity: 20%; //this way the animation stays foggy
+        opacity: 20%; //this way the animation stays foggy
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg)
+    }
+    10% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(90deg)
     }
 }
