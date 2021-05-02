@@ -17,6 +17,11 @@ async function activateXR() {
   document.body.appendChild(exitButton);
   exitButton.classList.toggle('deform_xr_exitButton');
   document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "EXIT AR";
+  exitButton.addEventListener('click', onButtonClicked);
+
+  function onButtonClicked() {
+    xrSession.end();
+  }
 
   // Create three.js scene
   const scene = new THREE.Scene();
