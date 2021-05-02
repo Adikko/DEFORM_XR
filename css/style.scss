@@ -282,6 +282,10 @@ canvas {
     display: none; 
 }
 
+.deform_xr_exitButton {
+    z-index: 999;
+}
+
 @keyframes rotateButton {
     0% {
         transform: rotateZ(-15deg)

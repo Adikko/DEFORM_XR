@@ -6,6 +6,11 @@ This app contains parts of code copied from: developers.google.com/ar/develop/we
 developers.google.com code snippets are licensed under the Creative Commons Attribution 4.0 License. Further reading: https://creativecommons.org/licenses/by/4.0/
 */
 
+const exitButton = document.createElement("button");
+document.body.appendChild(exitButton);
+exitButton.classList.toggle('deform_xr_exitButton');
+document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "EXIT AR";
+
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
