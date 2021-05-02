@@ -79,15 +79,17 @@ async function activateXR() {
   let models = [];
 
   session.addEventListener("select", (event) => {
-      if (logo3d) {
-        const clone = logo3d.clone();
-        clone.position.copy(reticle.position);
-        scene.addNode(clone);
-        models.push(clone);
-        if (models.length > MAX_MODELS_COUNT) {
-          let oldClone = models.shift();
-          scene.removeNode(oldClone);
-        }
+      if (reticle.visible) {
+        if (logo3d) {
+          const clone = logo3d.clone();
+          clone.position.copy(reticle.position);
+          scene.addNode(clone);
+          models.push(clone);
+          if (models.length > MAX_MODELS_COUNT) {
+            let oldClone = models.shift();
+            scene.removeNode(oldClone);
+          }
+        }   
       }
   });
 
