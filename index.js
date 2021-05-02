@@ -136,13 +136,6 @@ async function activateXR() {
           reticle.updateMatrixWorld(true);
       }
 
-      if (hitTestResults.length > 0 && reticle) {
-        const hitPose = hitTestResults[0].getPose(referenceSpace);
-        reticle.visible = true;
-        reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
-        reticle.updateMatrixWorld(true);
-      }
-
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
     }
