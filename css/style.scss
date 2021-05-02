@@ -284,6 +284,16 @@ canvas {
 
 .deform_xr_exitButton {
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: none;
+    width: 10vw;
+    height: 5vh;
+    font-family: "Poppins-Black", sans-serif;
+    color: white;
+    background-color: black;
 }
 
 @keyframes rotateButton {
