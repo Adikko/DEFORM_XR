@@ -47,6 +47,41 @@ h2 {
   }
 }
 
+.deform_content_load {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #93FAA5;
+  z-index: 999;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_content_load {
+    background-color: #461661;
+  }
+}
+
+.deform_content_load_finished {
+  opacity: 0%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #93FAA5;
+  z-index: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_content_load_finished {
+    background-color: #461661;
+  }
+}
+
 .deform_xr {
   width: 100%;
   height: 100%;

@@ -24,7 +24,6 @@ async function activateXR() {
       const objLoader = new THREE.OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load('./3D/3d_logo_opened.obj', function(object) {
-
         logo3d = object; //accessing the global variable
         logo3d.scale.set(0.05,0.05,0.05);
     });
@@ -32,7 +31,7 @@ async function activateXR() {
 
   scene.add(logo3d);
 
-  // Setting up a light source tied to the model
+  // Setting up a light source
   let light = new THREE.PointLight(0xFFFFFF);
   light.position.set(-10, 15, 50);
   scene.add(light);
@@ -115,6 +114,13 @@ async function activateXR() {
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
           reticle.updateMatrixWorld(true);
       }
+
+      if (hitTestResults.length > 0 && reticle) {
+        const hitPose = hitTestResults[0].getPose(referenceSpace);
+        reticle.visible = true;
+        reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
+        reticle.updateMatrixWorld(true);
+    }
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)

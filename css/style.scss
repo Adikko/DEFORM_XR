@@ -38,6 +38,30 @@ h2 {
     }
 }
 
+.deform_content_load {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    background-color: #93FAA5;
+    @media (prefers-color-scheme: dark) {
+        background-color: #461661;
+    }
+    z-index: 999;
+    transition: all 1s ease;
+}
+
+.deform_content_load_finished {
+    opacity: 0%;
+    position: absolute;
+    display: flex;
+    background-color: #93FAA5;
+    @media (prefers-color-scheme: dark) {
+        background-color: #461661;
+    }
+    z-index: 0;
+}
+
 .deform_xr {
     width: 100%;
     height: 100%;
