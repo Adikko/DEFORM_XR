@@ -29,10 +29,22 @@ h1 {
   color: #d04747;
 }
 
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: #D28DFA;
+  }
+}
+
 h2 {
   font-size: calc(0.8vh + 0.8vw);
   font-family: "Poppins-ExtraLight", sans-serif;
   color: #d04747;
+}
+
+@media (prefers-color-scheme: dark) {
+  h2 {
+    color: #D28DFA;
+  }
 }
 
 .deform_xr {
@@ -43,6 +55,41 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   background-color: black;
+}
+
+.deform_landing_animation {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  background-color: #93FAA5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_landing_animation {
+    background-color: #461661;
+  }
+}
+
+.deform_landing_webgl {
+  -webkit-animation-name: landingPage_fade;
+          animation-name: landingPage_fade;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  opacity: 20%;
+}
+
+@media screen and (min-width: 2300px) {
+  canvas {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2299px) {
+  canvas {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 .deform_menu {
@@ -112,6 +159,13 @@ h2 {
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_logo_empty {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
 .deform_logo {
   z-index: 3;
   padding: 5vw 25vw 5vw 5vw;
@@ -124,15 +178,41 @@ h2 {
   .deform_logo {
     padding: 10vw;
     width: 10vw;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(147, 250, 165, 0.9);
     z-index: 3;
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
             box-shadow: 0px 0px 0px 10px #d04747 inset;
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_logo {
+    background-color: rgba(70, 22, 97, 0.9);
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_logo {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_logo {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
 .deform_landing_logoLandingPage_svg {
   fill: #d04747;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_landing_logoLandingPage_svg {
+    fill: #D28DFA;
+  }
 }
 
 .deform_xr_instructions_mobile {
@@ -145,6 +225,7 @@ h2 {
             transform: translate(0px, -10px);
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
             box-shadow: 0px 0px 0px 10px #d04747 inset;
+    background-color: rgba(147, 250, 165, 0.9);
     padding: 10vw 20vw 10vw 10vw;
     width: 30vw;
     left: 0;
@@ -160,11 +241,25 @@ h2 {
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_xr_instructions_mobile {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_xr_instructions_mobile {
+    background-color: rgba(70, 22, 97, 0.9);
+  }
+}
+
 .deform_xr_instructions_desktop {
   -webkit-transform: translate(0px, -10px);
           transform: translate(0px, -10px);
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
+  background-color: rgba(147, 250, 165, 0.9);
   padding: 5vw;
   width: 30vw;
   left: 0;
@@ -185,12 +280,22 @@ h2 {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .deform_xr_instructions_desktop {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_xr_instructions_desktop {
+    background-color: rgba(70, 22, 97, 0.9);
+  }
+}
+
 .deform_button {
   -webkit-transform: translate(0px, -10px);
           transform: translate(0px, -10px);
-  background-color: #d04747;
-  -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
-          box-shadow: 0px 0px 0px 10px #d04747 inset;
   width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,7 +312,7 @@ h2 {
 
 @media only screen and (hover: none) and (pointer: coarse) {
   .deform_button_empty {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     width: 30vw;
     border: none;
     display: -webkit-box;
@@ -226,6 +331,22 @@ h2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background-color: #d04747;
+    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
+            box-shadow: 0px 0px 0px 10px #d04747 inset;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_button_container {
+    background-color: #D28DFA;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_button_container {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
   }
 }
 
@@ -237,7 +358,7 @@ h2 {
   .deform_xr_button {
     background-color: #d04747;
     border: none;
-    color: black;
+    color: #93FAA5;
     height: 30vw;
     padding: 10vw;
     display: -webkit-box;
@@ -254,6 +375,18 @@ h2 {
     -webkit-animation: rotateButton 7s infinite;
             animation: rotateButton 7s infinite;
     float: right;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_xr_button {
+    background-color: #D28DFA;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+  .deform_xr_button {
+    color: #461661;
   }
 }
 
@@ -284,6 +417,30 @@ h2 {
   100% {
     -webkit-transform: rotateZ(-15deg);
             transform: rotateZ(-15deg);
+  }
+}
+
+@-webkit-keyframes landingPage_fade {
+  0% {
+    opacity: 0%;
+  }
+  10% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
+
+@keyframes landingPage_fade {
+  0% {
+    opacity: 0%;
+  }
+  10% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 20%;
   }
 }
 /*# sourceMappingURL=style.css.map */

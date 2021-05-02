@@ -24,12 +24,18 @@ h1 {
     font-size: calc(1vh + 1vw);
     font-family: "Poppins-Medium", sans-serif;
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 h2 {
     font-size: calc(0.8vh + 0.8vw);
     font-family: "Poppins-ExtraLight", sans-serif;
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_xr {
@@ -38,6 +44,31 @@ h2 {
     position: absolute;
     display: flex;
     background-color: black;
+}
+
+.deform_landing_animation {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    background-color: #93FAA5;
+    @media (prefers-color-scheme: dark) {
+        background-color: #461661;
+    }
+}
+
+.deform_landing_webgl {
+    animation-name: landingPage_fade;
+    animation-duration: 5s;
+    opacity: 20%; //animation stays foggy
+}
+
+canvas {
+    @media screen and (min-width: 2300px) {
+        transform: scale(2); //the animation was becoming too small on high definition screens
+    }
+    @media screen and (min-width: 2000px) and (max-width: 2299px) {
+        transform: scale(1.5); //the animation was becoming too small on high definition screens
+    }
 }
 
 .deform_menu {
@@ -77,6 +108,9 @@ h2 {
         background-color: rgba($color: #000000, $alpha: 0.0);
         z-index: 3;
         box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+        @media (prefers-color-scheme: dark) {
+            box-shadow:0px 0px 0px 10px #D28DFA inset;
+        }
     }
     display: none;
 }
@@ -85,24 +119,43 @@ h2 {
     @media only screen and (hover: none) and (pointer: coarse) {
         padding: 10vw;
         width: 10vw;
-        background-color: rgba($color: #000000, $alpha: 0.0);
+        background-color: rgba($color: #93FAA5, $alpha: 0.9);
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($color: #461661, $alpha: 0.9);
+        }  
         z-index: 3;
         box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+        @media (prefers-color-scheme: dark) {
+            box-shadow:0px 0px 0px 10px #D28DFA inset;
+        }   
     }
     z-index: 3;
     padding: 5vw 25vw 5vw 5vw;
     width: 10vw;
     box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+    @media (prefers-color-scheme: dark) {
+        box-shadow:0px 0px 0px 10px #D28DFA inset;
+    }
 }
 
 .deform_landing_logoLandingPage_svg {
     fill: #d04747;
+    @media (prefers-color-scheme: dark) {
+        fill: #D28DFA;
+    }
 }
 
 .deform_xr_instructions_mobile {
     @media only screen and (hover: none) and (pointer: coarse) {
         transform: translate(0px, -10px); //hide the underside of the border
-        box-shadow:0px 0px 0px 10px #d04747 inset;
+        box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+        @media (prefers-color-scheme: dark) {
+            box-shadow:0px 0px 0px 10px #D28DFA inset;
+        }
+        background-color: rgba($color: #93FAA5, $alpha: 0.9);
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($color: #461661, $alpha: 0.9);
+        }
         padding: 10vw 20vw 10vw 10vw;
         width: 30vw;
         left: 0;
@@ -119,7 +172,14 @@ h2 {
         display: none;    
     }
     transform: translate(0px, -10px); //hide the underside of the border
-    box-shadow:0px 0px 0px 10px #d04747 inset;
+    box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+    @media (prefers-color-scheme: dark) {
+        box-shadow:0px 0px 0px 10px #D28DFA inset;
+    }
+    background-color: rgba($color: #93FAA5, $alpha: 0.9);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #461661, $alpha: 0.9);
+    }
     padding: 5vw;
     width: 30vw;
     left: 0;
@@ -131,8 +191,6 @@ h2 {
 
 .deform_button {
     transform: translate(0px, -10px); //hide the underside of the border
-    background-color: #d04747;
-    box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div
     width: 60vw;
     display: flex;
     flex-direction: row;
@@ -140,7 +198,7 @@ h2 {
 
 .deform_button_empty {
     @media only screen and (hover: none) and (pointer: coarse) {
-        background-color: black;
+        background-color: rgba($color: #000000, $alpha: 0.0);
         width: 30vw;
         border: none;
         display: flex;
@@ -152,6 +210,14 @@ h2 {
     @media only screen and (hover: none) and (pointer: coarse) {
         width: 30vw;
         display: flex;
+        background-color: #d04747;
+        @media (prefers-color-scheme: dark) {
+            background-color: #D28DFA;
+        }
+        box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div
+        @media (prefers-color-scheme: dark) {
+            box-shadow:0px 0px 0px 10px #D28DFA inset; //make the border go inside the div
+        }
     }
     display: none; 
 }
@@ -159,8 +225,14 @@ h2 {
 .deform_xr_button {
     @media only screen and (hover: none) and (pointer: coarse) {
         background-color: #d04747;
+        @media (prefers-color-scheme: dark) {
+            background-color:  #D28DFA;
+        }
         border: none;
-        color: black;
+        color: #93FAA5;
+        @media (prefers-color-scheme: dark) {
+            color: #461661;
+        }
         height: 30vw;
         padding: 10vw;
         display: flex;
@@ -178,4 +250,16 @@ h2 {
     0% {transform: rotateZ(-15deg)};
     50% {transform: rotateZ(15deg)};
     100% {transform: rotateZ(-15deg)};
+}
+
+@keyframes landingPage_fade {
+    0% {
+      opacity: 0%;
+    }
+    10% {
+        opacity: 0%;
+      }
+    100% {
+      opacity: 20%; //this way the animation stays foggy
+    }
 }
