@@ -108,6 +108,8 @@ async function activateXR() {
   }
   */
 
+  let animated_scale; // Storing scale as a global variable, for further ease of access
+
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
@@ -137,8 +139,12 @@ async function activateXR() {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
-          reticle.scale.y = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
+          animated_scale = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
           reticle.updateMatrixWorld(true);
+      }
+
+      if (models.length > 0) {
+        clone.scale.y = animated_scale;
       }
 
       // Render the scene with THREE.WebGLRenderer.
