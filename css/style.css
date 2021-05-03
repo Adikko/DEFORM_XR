@@ -29,6 +29,12 @@ h1 {
   color: #d04747;
 }
 
+@media (orientation: landscape) {
+  h1 {
+    font-size: calc(0.9vh + 0.9vw);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   h1 {
     color: #D28DFA;
@@ -39,6 +45,12 @@ h2 {
   font-size: calc(0.8vh + 0.8vw);
   font-family: "Poppins-ExtraLight", sans-serif;
   color: #d04747;
+}
+
+@media (orientation: landscape) {
+  h2 {
+    font-size: calc(0.7vh + 0.7vw);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -157,14 +169,13 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 80vh;
   width: 40vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
   right: 30vw;
-  bottom: 10vh;
+  top: 30vh;
 }
 
 @media only screen and (hover: none) and (pointer: coarse) {
@@ -186,17 +197,52 @@ h2 {
     position: absolute;
     right: 0px;
     bottom: 10vh;
+    top: 12vh;
   }
 }
 
-.deform_logo_divider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_menu {
+    height: 80vh;
+    width: 80vw;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_menu {
+    right: 10vw;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .deform_logo_divider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_logo_divider {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .deform_logo_empty {
@@ -214,6 +260,12 @@ h2 {
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_logo_empty {
+    display: none;
+  }
+}
+
 @media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
   .deform_logo_empty {
     -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
@@ -223,8 +275,16 @@ h2 {
 
 .deform_logo {
   z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 5vw 25vw 5vw 5vw;
-  width: 10vw;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
 }
@@ -237,6 +297,18 @@ h2 {
     z-index: 3;
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
             box-shadow: 0px 0px 0px 10px #d04747 inset;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_logo {
+    padding: 5vw;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_logo {
+    width: 8vw;
   }
 }
 
@@ -296,6 +368,13 @@ h2 {
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    -webkit-transform: translate(-10px, 0px);
+            transform: translate(-10px, 0px);
+  }
+}
+
 @media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
   .deform_xr_instructions_mobile {
     -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
@@ -306,6 +385,19 @@ h2 {
 @media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
   .deform_xr_instructions_mobile {
     background-color: rgba(70, 22, 97, 0.9);
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    padding: 5vw 5vw 5vw 5vw;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    width: 20vw;
+    height: 20vw;
   }
 }
 
@@ -361,6 +453,29 @@ h2 {
           flex-direction: row;
 }
 
+@media (orientation: landscape) {
+  .deform_button {
+    -webkit-transform: translate(-10px, 0px);
+            transform: translate(-10px, 0px);
+  }
+}
+
+@media (orientation: landscape) {
+  .deform_button {
+    width: 30vw;
+    height: 30vw;
+  }
+}
+
+@media (orientation: landscape) {
+  .deform_button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .deform_button_empty {
   display: none;
 }
@@ -373,6 +488,12 @@ h2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_button_empty {
+    display: none;
   }
 }
 
@@ -389,6 +510,12 @@ h2 {
     background-color: #d04747;
     -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
             box-shadow: 0px 0px 0px 10px #d04747 inset;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  .deform_button_container {
+    width: 30vw;
   }
 }
 
