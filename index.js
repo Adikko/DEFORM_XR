@@ -142,7 +142,7 @@ async function activateXR() {
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
         reticle.scale.y = animated_scale;
-        if (clone !== null) {
+        if (clone != null) {
           clone.scale.y = animated_scale;
           clone.updateMatrixWorld(true);
         }
