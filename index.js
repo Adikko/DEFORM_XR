@@ -86,7 +86,6 @@ async function activateXR() {
           const clone = logo3d.clone();
           clone.visible = true;
           clone.position.copy(reticle.position);
-          clone.scale.y = animated_scale;
           scene.add(clone);
           models.push(clone);
           if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
@@ -145,11 +144,6 @@ async function activateXR() {
           reticle.scale.y = animated_scale;
           reticle.updateMatrixWorld(true);
       }
-
-      if (clone) {
-        clone.scale.y = animated_scale;
-        clone.updateMatrixWorld(true);
-    }
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
