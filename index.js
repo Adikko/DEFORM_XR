@@ -86,10 +86,12 @@ async function activateXR() {
           clone.position = reticle.position;
           scene.addNode(clone);
           models.push(clone);
+          /*
           if (models.length > MAX_MODELS_COUNT) {
             let oldClone = models.shift();
             scene.removeNode(oldClone);
           }
+          */
         }   
       }
   });
