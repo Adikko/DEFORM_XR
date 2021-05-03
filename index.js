@@ -83,15 +83,14 @@ async function activateXR() {
         if (logo3d) {
           const clone = logo3d.clone();
           clone.visible = true;
-          clone.position = reticle.position;
+          clone.position.copy(reticle.position);
           scene.add(clone);
           models.push(clone);
-          /*
           if (models.length > MAX_MODELS_COUNT) {
-            let oldClone = models.shift();
-            scene.removeNode(oldClone);
+            let oldClone = models[0];
+            scene.remove(oldClone);
+            models.shift();
           }
-          */
         }   
       }
   });
