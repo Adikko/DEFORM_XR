@@ -84,6 +84,7 @@ async function activateXR() {
           const clone = logo3d.clone();
           clone.visible = true;
           clone.position.copy(reticle.position);
+          clone.scale.y = animated_scale;
           scene.add(clone);
           models.push(clone);
           if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
@@ -139,12 +140,9 @@ async function activateXR() {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
+          reticle.scale.y = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
           animated_scale = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
           reticle.updateMatrixWorld(true);
-      }
-
-      if (models.length > 0) {
-        clone.scale.y = animated_scale;
       }
 
       // Render the scene with THREE.WebGLRenderer.
