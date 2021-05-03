@@ -78,6 +78,8 @@ async function activateXR() {
   const MAX_MODELS_COUNT = 5;
   let models = [];
 
+  let animated_scale = 1; // Storing scale as a global variable, for further ease of access
+
   session.addEventListener("select", (event) => {
       if (reticle.visible) {
         if (logo3d) {
@@ -109,8 +111,6 @@ async function activateXR() {
   }
   */
 
-  let animated_scale; // Storing scale as a global variable, for further ease of access
-
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
@@ -140,8 +140,8 @@ async function activateXR() {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
-          reticle.scale.y = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
-          animated_scale = (Math.sin(time*0.004) + (Math.PI * 0.37)) * 100;
+          animated_scale = (Math.sin(time*0.00004) + (Math.PI * 0.37)) * 100;
+          reticle.scale.y = animated_scale;
           reticle.updateMatrixWorld(true);
       }
 
