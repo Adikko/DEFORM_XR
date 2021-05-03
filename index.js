@@ -86,10 +86,10 @@ async function activateXR() {
           clone.position.copy(reticle.position);
           scene.add(clone);
           models.push(clone);
-          if (models.length > MAX_MODELS_COUNT) {
+          if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
             let oldClone = models[0];
             scene.remove(oldClone);
-            models.shift();
+            models.shift(); // Deleting the oldest model first
           }
         }   
       }
@@ -137,6 +137,7 @@ async function activateXR() {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
+          reticle.scale.y = (Math.sin(time*0.4) + (Math.PI * 0.37)) * 100;
           reticle.updateMatrixWorld(true);
       }
 
