@@ -140,7 +140,7 @@ async function activateXR() {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
-          animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 100;
+          animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37));
           reticle.scale.y = animated_scale;
           reticle.updateMatrixWorld(true);
       }
