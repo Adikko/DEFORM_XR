@@ -77,7 +77,7 @@ async function activateXR() {
 
   const MAX_MODELS_COUNT = 5;
   let models = [];
-
+  let clone // Clone will be stored as a global variable, to enable transformations in the gameloop (onXRframe)
   let animated_scale; // Storing scale as a global variable, for further ease of access
 
   session.addEventListener("select", (event) => {
@@ -145,9 +145,9 @@ async function activateXR() {
         reticle.updateMatrixWorld(true);
       }
 
-      if (logo3d) {
-        logo3d.scale.y = animated_scale;
-        logo3d.updateMatrixWorld(true);
+      if (clone) {
+        clone.scale.y = animated_scale;
+        clone.updateMatrixWorld(true);
       }
 
       // Render the scene with THREE.WebGLRenderer.
