@@ -134,13 +134,12 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.01;
-
       const hitTestResults = frame.getHitTestResults(hitTestSource);
       if (hitTestResults.length > 0 && reticle) {
           const hitPose = hitTestResults[0].getPose(referenceSpace);
           reticle.visible = true;
           reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
+          animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.01;
           reticle.scale.y = animated_scale;
           reticle.updateMatrixWorld(true);
       }
