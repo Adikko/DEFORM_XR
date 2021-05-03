@@ -145,7 +145,7 @@ async function activateXR() {
         reticle.updateMatrixWorld(true);
       }
 
-      if (clone) {
+      if (clone != null) {
         clone.scale.y = animated_scale;
         clone.updateMatrixWorld(true);
       }
