@@ -81,20 +81,20 @@ async function activateXR() {
   let animated_scale; // Storing scale as a global variable, for further ease of access
 
   session.addEventListener("select", (event) => {
-      if (reticle.visible) {
-        if (logo3d) {
-          const clone = logo3d.clone();
-          clone.visible = true;
-          clone.position.copy(reticle.position);
-          scene.add(clone);
-          models.push(clone);
-          if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
-            let oldClone = models[0];
-            scene.remove(oldClone);
-            models.shift(); // Deleting the oldest model first
-          }
-        }   
-      }
+    if (reticle.visible) {
+      if (logo3d) {
+        const clone = logo3d.clone();
+        clone.visible = true;
+        clone.position.copy(reticle.position);
+        scene.add(clone);
+        models.push(clone);
+        if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
+          let oldClone = models[0];
+          scene.remove(oldClone);
+          models.shift(); // Deleting the oldest model first
+        }
+      }   
+    }
   });
 
   /*
@@ -145,9 +145,9 @@ async function activateXR() {
         reticle.updateMatrixWorld(true);
       }
 
-      if (clone) {
-        clone.scale.y = animated_scale;
-        clone.updateMatrixWorld(true);
+      if (logo3d) {
+        logo3d.scale.y = animated_scale;
+        logo3d.updateMatrixWorld(true);
       }
 
       // Render the scene with THREE.WebGLRenderer.
