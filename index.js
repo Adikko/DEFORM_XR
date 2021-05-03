@@ -84,7 +84,7 @@ async function activateXR() {
           const clone = logo3d.clone();
           clone.visible = true;
           clone.position = reticle.position;
-          scene.addNode(clone);
+          scene.add(clone);
           models.push(clone);
           /*
           if (models.length > MAX_MODELS_COUNT) {

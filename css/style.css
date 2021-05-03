@@ -522,13 +522,21 @@ h2 {
     -webkit-transform: rotate3d(1, 0, 0, 0deg);
             transform: rotate3d(1, 0, 0, 0deg);
   }
-  10% {
+  5% {
     -webkit-transform: rotate3d(1, 0, 0, 0deg);
             transform: rotate3d(1, 0, 0, 0deg);
   }
-  100% {
+  50% {
     -webkit-transform: rotate3d(1, 0, 0, 180deg);
             transform: rotate3d(1, 0, 0, 180deg);
+  }
+  55% {
+    -webkit-transform: rotate3d(1, 0, 0, 180deg);
+            transform: rotate3d(1, 0, 0, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 180deg);
+            transform: rotate3d(1, 1, 0, 180deg);
   }
 }
 
@@ -537,13 +545,21 @@ h2 {
     -webkit-transform: rotate3d(1, 0, 0, 0deg);
             transform: rotate3d(1, 0, 0, 0deg);
   }
-  10% {
+  5% {
     -webkit-transform: rotate3d(1, 0, 0, 0deg);
             transform: rotate3d(1, 0, 0, 0deg);
   }
-  100% {
+  50% {
     -webkit-transform: rotate3d(1, 0, 0, 180deg);
             transform: rotate3d(1, 0, 0, 180deg);
+  }
+  55% {
+    -webkit-transform: rotate3d(1, 0, 0, 180deg);
+            transform: rotate3d(1, 0, 0, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 180deg);
+            transform: rotate3d(1, 1, 0, 180deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
