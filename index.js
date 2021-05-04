@@ -6,8 +6,6 @@ This app contains parts of code copied from: developers.google.com/ar/develop/we
 developers.google.com code snippets are licensed under the Creative Commons Attribution 4.0 License. Further reading: https://creativecommons.org/licenses/by/4.0/
 */
 
-const clone = new THREE.Object3D(); //storing as a global variable, for further animations
-
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
@@ -18,7 +16,7 @@ async function activateXR() {
   const scene = new THREE.Scene();
 
   // Loading a model
-  let clone = null;
+  let clone = null; //declaring clone as null globally fixes the issue of animations not working in the game loop
   let logo3d = null;
 
   const mtlLoader = new THREE.MTLLoader();
@@ -148,9 +146,12 @@ async function activateXR() {
       }
 
       if (clone !== null && models.length >= 1) {
-        clone.scale.y = animated_scale;
-        console.log(clone.scale.y);
-        clone.updateMatrixWorld(true);
+        for (let i = 0; i < models.length; i++) {
+          if (models[i] !== null) {
+            models[i].scale.y = animated_scale;
+            models[i].updateMatrixWorld(true);
+          }
+        }
       }
 
       // Render the scene with THREE.WebGLRenderer.
