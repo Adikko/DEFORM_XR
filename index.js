@@ -86,6 +86,7 @@ async function activateXR() {
         clone = logo3d.clone();
         clone.visible = true;
         clone.position.copy(reticle.position);
+        clone.rotation.y = (Math.floor((Math.random() * 100 * Math.PI) + 1));
         scene.add(clone);
         models.push(clone);
         if (models.length > MAX_MODELS_COUNT) { // Reducing max amount of models for sustainable performance
