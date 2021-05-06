@@ -13,6 +13,19 @@ async function activateXR() {
   const gl = gameLoop_canvas.getContext("webgl", {xrCompatible: true});
   gl.canvas.style.zIndex = 997;
 
+  // Add an exit button
+  const exitButton = document.createElement("button");
+  document.body.appendChild(exitButton);
+  exitButton.classList.toggle('deform_xr_exitButton');
+  document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "exit";
+  exitButton.addEventListener('click', onButtonClicked);
+
+  function onButtonClicked() {
+    session.end();
+    document.body.removeChild(gameLoop_canvas);
+    document.body.removeChild(exitButton);
+  }
+
   // Create three.js scene
   const scene = new THREE.Scene();
 
@@ -100,20 +113,6 @@ async function activateXR() {
     }
   });
 
-  // Add an exit button
-  const exitButton = document.createElement("button");
-  document.body.appendChild(exitButton);
-  exitButton.classList.toggle('deform_xr_exitButton');
-  document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "exit";
-  let exitButton2 = document.getElementsByClassName('deform_xr_exitButton')[0];
-  exitButton.addEventListener('click', onButtonClicked);
-
-  function onButtonClicked() {
-    session.end();
-    document.body.removeChild(gameLoop_canvas);
-    document.body.removeChild(exitButton);
-  }
-
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
@@ -156,6 +155,8 @@ async function activateXR() {
           }
         }
       }
+
+      document.getElementsByTagName('canvas')[1].style.zIndex = 997;
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera);
