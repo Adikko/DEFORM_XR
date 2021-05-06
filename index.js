@@ -9,8 +9,20 @@ developers.google.com code snippets are licensed under the Creative Commons Attr
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
+  canvas.classList.toggle("deform_canvas");
   document.body.appendChild(canvas);
   const gl = canvas.getContext("webgl", {xrCompatible: true});
+
+  // Add an exit button
+  const exitButton = document.createElement("button");
+  document.body.appendChild(exitButton);
+  exitButton.classList.toggle('deform_xr_exitButton');
+  document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "exit";
+  exitButton.addEventListener('click', onButtonClicked);
+
+  function onButtonClicked() {
+    session.end();
+  }
 
   // Create three.js scene
   const scene = new THREE.Scene();
@@ -98,19 +110,6 @@ async function activateXR() {
     }
   });
 
-  /*
-  // Add an exit button
-  const exitButton = document.createElement("button");
-  document.body.appendChild(exitButton);
-  exitButton.classList.toggle('deform_xr_exitButton');
-  document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "EXIT AR";
-  exitButton.addEventListener('click', onButtonClicked);
-
-  function onButtonClicked() {
-    session.end();
-  }
-  */
-
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
 
@@ -142,7 +141,6 @@ async function activateXR() {
         const hitPose = hitTestResults[0].getPose(referenceSpace);
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z);
-        reticle.scale.y = animated_scale;
         reticle.updateMatrixWorld(true);
       }
 
