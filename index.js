@@ -12,7 +12,6 @@ async function activateXR() {
   document.body.appendChild(gameLoop_canvas);
   const gl = gameLoop_canvas.getContext("webgl", {xrCompatible: true});
   gl.canvas.style.zIndex = 997;
-  console.log(gl);
 
   // Add an exit button
   const exitButton = document.createElement("button");
