@@ -156,6 +156,7 @@ async function activateXR() {
         }
       }
 
+      document.getElementsByTagName('div')[13].style.zIndex = 997;
       document.getElementsByTagName('canvas')[1].style.zIndex = 997;
 
       // Render the scene with THREE.WebGLRenderer.
