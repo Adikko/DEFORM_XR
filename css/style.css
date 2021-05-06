@@ -146,14 +146,14 @@ h2 {
 }
 
 @media screen and (min-width: 2300px) {
-  canvas {
+  .deform_landing_animation {
     -webkit-transform: scale(2);
             transform: scale(2);
   }
 }
 
 @media screen and (min-width: 2000px) and (max-width: 2299px) {
-  canvas {
+  .deform_landing_animation {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
   }
@@ -573,7 +573,7 @@ h2 {
 }
 
 .deform_xr_exitButton {
-  z-index: 10000;
+  z-index: 10001;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   /*
@@ -606,6 +606,10 @@ h2 {
   .deform_xr_exitButton {
     background-color: rgba(0, 0, 0, 0.3);
   }
+}
+
+.deform_gameLoop_canvas {
+  z-index: 997;
 }
 
 @-webkit-keyframes rotateButton {

@@ -104,7 +104,7 @@ h2 {
     opacity: 20%; //animation stays foggy
 }
 
-canvas {
+.deform_landing_animation {
     @media screen and (min-width: 2300px) {
         transform: scale(2); //the animation was becoming too small on high definition screens
     }
@@ -342,7 +342,7 @@ canvas {
 }
 
 .deform_xr_exitButton {
-    z-index: 10000;
+    z-index: 10001;
     backdrop-filter: blur(3px);
     /*
     box-shadow:0px 0px 0px 10px #fff inset; //make the border go inside the div
@@ -366,6 +366,10 @@ canvas {
     @media (prefers-color-scheme: dark) {
         background-color: rgba($color: #000, $alpha: 0.3);
     }
+}
+
+.deform_gameLoop_canvas {
+    z-index: 997;
 }
 
 @keyframes rotateButton {

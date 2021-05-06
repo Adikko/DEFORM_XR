@@ -8,10 +8,11 @@ developers.google.com code snippets are licensed under the Creative Commons Attr
 
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
-  const canvas = document.createElement("canvas");
-  canvas.classList.toggle("deform_canvas");
-  document.body.appendChild(canvas);
-  const gl = canvas.getContext("webgl", {xrCompatible: true});
+  const gameLoop_canvas = document.createElement("canvas");
+  document.body.appendChild(gameLoop_canvas);
+  gameLoop_canvas.classList.add('deform_gameLoop_canvas');
+  console.log(gameLoop_canvas.className);
+  const gl = gameLoop_canvas.getContext("webgl", {xrCompatible: true});
 
   // Add an exit button
   const exitButton = document.createElement("button");
@@ -22,6 +23,8 @@ async function activateXR() {
 
   function onButtonClicked() {
     session.end();
+    document.body.removeChild(gameLoop_canvas);
+    document.body.removeChild(exitButton);
   }
 
   // Create three.js scene
@@ -29,6 +32,7 @@ async function activateXR() {
 
   // Loading a model
   let clone = null; //declaring clone as null globally fixes the issue of animations not working in the game loop
+  let reticle = null;
   let logo3d = null;
 
   const mtlLoader = new THREE.MTLLoader();
@@ -53,7 +57,7 @@ async function activateXR() {
   const renderer = new THREE.WebGLRenderer({
     alpha: true,
     preserveDrawingBuffer: true,
-    canvas: canvas,
+    canvas: gameLoop_canvas,
     context: gl
   });
   renderer.autoClear = false;
@@ -81,12 +85,12 @@ async function activateXR() {
 
   // Reticle helps the user with placing the 3D object in the scene
   const loader = new THREE.GLTFLoader();
-  let reticle;
   loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
     reticle = gltf.scene;
     reticle.visible = false;
     scene.add(reticle);
   })
+
 
   const MAX_MODELS_COUNT = 5;
   let models = [];
@@ -137,7 +141,7 @@ async function activateXR() {
       animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.1;
 
       const hitTestResults = frame.getHitTestResults(hitTestSource);
-      if (hitTestResults.length > 0 && reticle) {
+      if (hitTestResults.length > 0 && reticle !== null) {
         const hitPose = hitTestResults[0].getPose(referenceSpace);
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z);
