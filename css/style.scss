@@ -368,8 +368,17 @@ h2 {
     }
 }
 
-.deform_gameLoop_canvas {
-    z-index: 997;
+.deform_gameLoop {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -999;
 }
 
 @keyframes rotateButton {

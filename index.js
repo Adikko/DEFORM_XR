@@ -10,15 +10,16 @@ async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const gameLoop_canvas = document.createElement("canvas");
   document.body.appendChild(gameLoop_canvas);
-  gameLoop_canvas.classList.add('deform_gameLoop_canvas');
-  console.log(gameLoop_canvas.className);
   const gl = gameLoop_canvas.getContext("webgl", {xrCompatible: true});
+  gl.canvas.style.zIndex = 997;
+  console.log(gl);
 
   // Add an exit button
   const exitButton = document.createElement("button");
   document.body.appendChild(exitButton);
   exitButton.classList.toggle('deform_xr_exitButton');
   document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "exit";
+  let exitButton2 = document.getElementsByClassName('deform_xr_exitButton')[0];
   exitButton.addEventListener('click', onButtonClicked);
 
   function onButtonClicked() {
