@@ -14,6 +14,7 @@ async function activateXR() {
   gl.canvas.style.zIndex = 997;
 
   // Add an exit button
+  /*
   const exitButton = document.createElement("button");
   document.body.appendChild(exitButton);
   exitButton.classList.toggle('deform_xr_exitButton');
@@ -25,6 +26,7 @@ async function activateXR() {
     document.body.removeChild(gameLoop_canvas);
     document.body.removeChild(exitButton);
   }
+  */
 
   // Create three.js scene
   const scene = new THREE.Scene();
@@ -90,7 +92,6 @@ async function activateXR() {
     scene.add(reticle);
   })
 
-
   const MAX_MODELS_COUNT = 5;
   let models = [];
   let animated_scale; // Storing scale as a global variable, for further ease of access
@@ -155,9 +156,6 @@ async function activateXR() {
           }
         }
       }
-
-      document.getElementsByTagName('div')[13].style.zIndex = 997;
-      document.getElementsByTagName('canvas')[1].style.zIndex = 997;
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera);
