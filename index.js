@@ -88,7 +88,6 @@ async function activateXR() {
     document.body.removeChild(gameLoop_canvas);
     deform_dom_overlay.removeChild(exitButton);
     deform_dom_overlay.style.display = "none";
-    hitTestSource = null;
   }
 
   // Reticle helps the user with placing the 3D object in the scene
