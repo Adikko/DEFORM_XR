@@ -56,8 +56,10 @@ async function activateXR() {
   // Initialize a WebXR session using "immersive-ar".
   const session = await navigator.xr.requestSession("immersive-ar", {
     requiredFeatures: ['hit-test'],
+    /*
     optionalFeatures: ['dom-overlay'],
     domOverlay: { root: document.getElementsByClassName("deform-dom-overlay")[0] },
+    */
   });
   session.updateRenderState({
     baseLayer: new XRWebGLLayer(session, gl)
