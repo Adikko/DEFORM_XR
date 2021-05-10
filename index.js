@@ -65,7 +65,7 @@ async function activateXR() {
 
   /*
   // Create a div to store the exitbutton
-  const deform_dom_overlay = document.getElementsByClassName("deform_dom_overlay")[0];
+  const deform_dom_overlay = document.getElementByID("deform_dom_overlay");
   deform_dom_overlay.style.display = "flex";
   document.body.appendChild.deform_dom_overlay;
   const exitButton = document.createElement("button");
