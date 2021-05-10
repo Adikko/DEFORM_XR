@@ -11,22 +11,6 @@ async function activateXR() {
   const gameLoop_canvas = document.createElement("canvas");
   document.body.appendChild(gameLoop_canvas);
   const gl = gameLoop_canvas.getContext("webgl", {xrCompatible: true});
-  gl.canvas.style.zIndex = 997;
-
-  // Add an exit button
-  /*
-  const exitButton = document.createElement("button");
-  document.body.appendChild(exitButton);
-  exitButton.classList.toggle('deform_xr_exitButton');
-  document.getElementsByClassName('deform_xr_exitButton')[0].innerText = "exit";
-  exitButton.addEventListener('click', onButtonClicked);
-
-  function onButtonClicked() {
-    session.end();
-    document.body.removeChild(gameLoop_canvas);
-    document.body.removeChild(exitButton);
-  }
-  */
 
   // Create three.js scene
   const scene = new THREE.Scene();
@@ -72,13 +56,22 @@ async function activateXR() {
   // Initialize a WebXR session using "immersive-ar".
   const session = await navigator.xr.requestSession("immersive-ar", {
     requiredFeatures: ['hit-test'],
-    //https://immersive-web.github.io/dom-overlays/
-    //https://github.com/immersive-web/webxr-samples/blob/main/ar-barebones.html
     optionalFeatures: ['dom-overlay'],
+    domOverlay: { root: document.getElementsByClassName("deform-dom-overlay")[0] },
   });
   session.updateRenderState({
     baseLayer: new XRWebGLLayer(session, gl)
   });
+
+  // Create a div to store the exitbutton
+  const deform_dom_overlay = document.getElementsByClassName("deform_dom_overlay")[0];
+  deform_dom_overlay.style.display = "flex";
+  document.body.appendChild.deform_dom_overlay;
+  const exitButton = document.createElement("button");
+  deform_dom_overlay.appendChild(exitButton);
+  exitButton.classList.toggle("deform_dom_overlay_exitButton");
+  exitButton.innerText = "exit";
+  exitButton.addEventListener('click', exitButtonClicked);
 
   // A 'local' reference space has a native origin that is located
   // near the viewer's position at the time the session was created.
@@ -87,7 +80,16 @@ async function activateXR() {
   // Create another XRReferenceSpace that has the viewer as the origin.
   const viewerSpace = await session.requestReferenceSpace('viewer');
   // Perform hit testing using the viewer as origin.
-  const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
+  let hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
+
+  // Exit button functionality
+  function exitButtonClicked() {
+    session.end();
+    document.body.removeChild(gameLoop_canvas);
+    deform_dom_overlay.removeChild(exitButton);
+    deform_dom_overlay.style.display = "none";
+    hitTestSource = null;
+  }
 
   // Reticle helps the user with placing the 3D object in the scene
   const loader = new THREE.GLTFLoader();
@@ -143,6 +145,7 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
+      // Scale variable is being calculated on every frame
       animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.1;
 
       const hitTestResults = frame.getHitTestResults(hitTestSource);
