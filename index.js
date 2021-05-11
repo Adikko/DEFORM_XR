@@ -53,19 +53,8 @@ async function activateXR() {
   const camera = new THREE.PerspectiveCamera();
   camera.matrixAutoUpdate = false;
 
-  // Initialize a WebXR session using "immersive-ar".
-  const session = await navigator.xr.requestSession("immersive-ar", {
-    requiredFeatures: ['hit-test'],
-    optionalFeatures: ['dom-overlay'],
-    domOverlay: { root: document.getElementById("deform_dom_overlay") },
-  });
-  session.updateRenderState({
-    baseLayer: new XRWebGLLayer(session, gl)
-  });
-
-  /*
   // Create a div to store the exitbutton
-  const deform_dom_overlay = document.getElementByID("deform_dom_overlay");
+  const deform_dom_overlay = document.getElementById("deform_dom_overlay");
   deform_dom_overlay.style.display = "flex";
   document.body.appendChild.deform_dom_overlay;
   const exitButton = document.createElement("button");
@@ -73,7 +62,16 @@ async function activateXR() {
   exitButton.classList.toggle("deform_dom_overlay_exitButton");
   exitButton.innerText = "exit";
   exitButton.addEventListener('click', exitButtonClicked);
-  */
+
+  // Initialize a WebXR session using "immersive-ar".
+  const session = await navigator.xr.requestSession("immersive-ar", {
+    requiredFeatures: ['hit-test'],
+    optionalFeatures: ['dom-overlay'],
+    domOverlay: { root: deform_dom_overlay },
+  });
+  session.updateRenderState({
+    baseLayer: new XRWebGLLayer(session, gl)
+  });
 
   // A 'local' reference space has a native origin that is located
   // near the viewer's position at the time the session was created.
@@ -84,7 +82,6 @@ async function activateXR() {
   // Perform hit testing using the viewer as origin.
   let hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
-  /*
   // Exit button functionality
   function exitButtonClicked() {
     session.end();
@@ -92,7 +89,6 @@ async function activateXR() {
     deform_dom_overlay.removeChild(exitButton);
     deform_dom_overlay.style.display = "none";
   }
-  */
 
   // Reticle helps the user with placing the 3D object in the scene
   const loader = new THREE.GLTFLoader();
