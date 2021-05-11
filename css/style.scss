@@ -370,18 +370,52 @@ h2 {
 }
 
 .deform_dom_overlay_exitButton {
-    top: 15vh;
+    top: 10vh;
     left: 5vh;
     position: absolute;
     border: none;
-    width: 10vh;
-    height: 10vh;
+    width: 8vh;
+    height: 8vh;
     border-radius: 100vh;
     background-color: rgba($color: #000, $alpha: 0.2); // Dark color comes in the daytime, so the contrast is better
     @media (prefers-color-scheme: dark) {
         background-color: rgba($color: #fff, $alpha: 0.2); // In the dark, you can't see the black text, which is the reason for this media query
     }
     font-family: "Poppins-Black", sans-serif;
+    font-size: calc(1.5vh + 1.5vw);
+    color: #000;
+    @media (prefers-color-scheme: dark) {
+        color: #fff;
+    }
+}
+
+.deform_dom_overlay_instructionDiv {
+    animation: dom_overlay_fade 6s;
+    animation-iteration-count: 1;
+    opacity: 0%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 20vh;
+    bottom: 10vh;
+}
+
+.deform_dom_overlay_instructionDiv_icon svg {
+    animation: dom_overlay_phone 3s infinite;
+    width: 7vw;
+    padding: calc(2vh + 2vw);
+    fill: #000;
+    @media (prefers-color-scheme: dark) {
+        fill: #fff;
+    }
+}
+
+.deform_dom_overlay_instructionDiv_text {
+    width: 30vw;
+    font-family: "Poppins-Medium", sans-serif;
     font-size: calc(1.5vh + 1.5vw);
     color: #000;
     @media (prefers-color-scheme: dark) {
@@ -441,4 +475,31 @@ h2 {
     100% {
         transform: rotate3d(1, 1, 0, 180deg);
     }
+}
+
+@keyframes dom_overlay_fade {
+    0% {
+        opacity: 100%;
+    }
+    80% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes dom_overlay_phone {
+    0% {
+        transform: rotateZ(-15deg) translateX(0vw);
+    };
+    30% {
+        transform: rotateZ(15deg) translateX(-3vw);
+    };
+    70% {
+        transform: rotateZ(15deg) translateX(-3vw);
+    };
+    100% {
+        transform: rotateZ(-15deg) translateX(0vw);
+    };
 }
