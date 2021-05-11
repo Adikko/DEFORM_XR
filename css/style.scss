@@ -370,15 +370,16 @@ h2 {
 }
 
 .deform_dom_overlay_exitButton {
-    backdrop-filter: blur(3px);
-    top: 5vh;
+    top: 15vh;
     left: 5vh;
     position: absolute;
     border: none;
-    padding: 3vw;
-    background-color: rgba($color: #fff, $alpha: 0.3);
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100vh;
+    background-color: rgba($color: #fff, $alpha: 0.2);
     @media (prefers-color-scheme: dark) {
-        background-color: rgba($color: #000, $alpha: 0.3);
+        background-color: rgba($color: #000, $alpha: 0.2);
     }
     font-family: "Poppins-Black", sans-serif;
     font-size: calc(1.5vh + 1.5vw);

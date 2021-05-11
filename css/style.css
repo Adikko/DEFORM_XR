@@ -601,14 +601,14 @@ h2 {
 }
 
 .deform_dom_overlay_exitButton {
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  top: 5vh;
+  top: 15vh;
   left: 5vh;
   position: absolute;
   border: none;
-  padding: 3vw;
-  background-color: rgba(255, 255, 255, 0.3);
+  width: 10vh;
+  height: 10vh;
+  border-radius: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
   font-family: "Poppins-Black", sans-serif;
   font-size: calc(1.5vh + 1.5vw);
   color: white;
@@ -616,7 +616,7 @@ h2 {
 
 @media (prefers-color-scheme: dark) {
   .deform_dom_overlay_exitButton {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 

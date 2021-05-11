@@ -60,7 +60,7 @@ async function activateXR() {
   const exitButton = document.createElement("button");
   deform_dom_overlay.appendChild(exitButton);
   exitButton.classList.toggle("deform_dom_overlay_exitButton");
-  exitButton.innerText = "exit";
+  exitButton.innerText = "X";
   exitButton.addEventListener('click', exitButtonClicked);
 
   // Initialize a WebXR session using "immersive-ar".
