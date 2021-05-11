@@ -56,12 +56,18 @@ async function activateXR() {
   // Create a div to store the exitbutton
   const deform_dom_overlay = document.getElementById("deform_dom_overlay");
   deform_dom_overlay.style.display = "flex";
-  document.body.appendChild.deform_dom_overlay;
+  //document.body.appendChild.deform_dom_overlay;
   const exitButton = document.createElement("button");
   deform_dom_overlay.appendChild(exitButton);
   exitButton.classList.toggle("deform_dom_overlay_exitButton");
   exitButton.innerText = "X";
   exitButton.addEventListener('click', exitButtonClicked);
+  
+  // Create a div to store instructions
+  const instructionDiv = document.createElement("div");
+  deform_dom_overlay.appendChild(instructionDiv);
+  instructionDiv.classList.toggle("deform_dom_overlay_instructionDiv");
+  instructionDiv.innerHTML = '<div class="deform_dom_overlay_instructionDiv_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><div class="deform_dom_overlay_instructionDiv_text">Use your phone to scan your surroudings</div>'
 
   // Initialize a WebXR session using "immersive-ar".
   const session = await navigator.xr.requestSession("immersive-ar", {
@@ -87,6 +93,7 @@ async function activateXR() {
     session.end();
     document.body.removeChild(gameLoop_canvas);
     deform_dom_overlay.removeChild(exitButton);
+    deform_dom_overlay.removeChild(instructionDiv);
     deform_dom_overlay.style.display = "none";
   }
 
