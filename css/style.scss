@@ -377,15 +377,15 @@ h2 {
     width: 10vh;
     height: 10vh;
     border-radius: 100vh;
-    background-color: rgba($color: #fff, $alpha: 0.2);
+    background-color: rgba($color: #000, $alpha: 0.2); // Dark color comes in the daytime, so the contrast is better
     @media (prefers-color-scheme: dark) {
-        background-color: rgba($color: #000, $alpha: 0.2);
+        background-color: rgba($color: #fff, $alpha: 0.2); // In the dark, you can't see the black text, which is the reason for this media query
     }
     font-family: "Poppins-Black", sans-serif;
     font-size: calc(1.5vh + 1.5vw);
-    color: white;
+    color: #000;
     @media (prefers-color-scheme: dark) {
-        color: #000;
+        color: #fff;
     }
 }
 
