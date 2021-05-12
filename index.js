@@ -1,7 +1,7 @@
 /*
 license:
 THREE.js is licensed under the MIT license. Further reading: https://github.com/mrdoob/three.js/blob/dev/LICENSE
-WebXR is licensed under the W3C license. FUrther reading: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+WebXR is licensed under the W3C license. Further reading: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
 This app contains parts of code copied from: developers.google.com/ar/develop/webxr/hello-webxr
 developers.google.com code snippets are licensed under the Creative Commons Attribution 4.0 License. Further reading: https://creativecommons.org/licenses/by/4.0/
 */
