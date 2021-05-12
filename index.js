@@ -103,7 +103,7 @@ async function activateXR() {
 
   // Reticle helps the user with placing the 3D object in the scene
   reticle = new THREE.Mesh(
-    new THREE.RingGeometry( 0.4, 0.5, 4 ),
+    new THREE.RingGeometry( 0.4, 0.5, 4 ).rotateX(-Math.PI / 2),
     new THREE.MeshBasicMaterial( { color: 0xffffff, side: THREE.DoubleSide } )
   );
   reticle.visible = false;
