@@ -177,8 +177,6 @@ h2 {
           justify-content: center;
   position: absolute;
   right: 0px;
-  bottom: 10vh;
-  top: 12vh;
 }
 
 @media (orientation: landscape) {

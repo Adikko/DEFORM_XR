@@ -131,12 +131,10 @@ h2 {
     justify-content: center;
     position: absolute;
     right: 0px;
-    bottom: 10vh;
     @media (orientation: landscape) {
         right: 10vw;
         bottom: 0px;
     }
-    top: 12vh;
 }
 
 .deform_logo_divider {

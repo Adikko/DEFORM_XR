@@ -9,8 +9,6 @@ if ("xr" in navigator) {
 // Let's edit the button to display the correct call to action
 const init_button = document.getElementsByClassName("deform_button_container")[0];
 const instructions_list = document.getElementById("instructions");
-const welcome_message = document.getElementById("welcome");
-welcome_message.innerText = "Witaj w rozszerzonej rzeczywistości";
 if (xr_checker === true) {
     init_button.innerHTML = '<button class="deform_xr_button" onclick="activateXR()">Start!</button>'
 } else {
