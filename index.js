@@ -156,7 +156,8 @@ async function activateXR() {
       camera.updateMatrixWorld(true);
 
       // Scale variable is being calculated on every frame
-      animated_scale = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.1;
+      animated_scale_sin = (Math.sin(time*0.001) + (Math.PI * 0.37)) * 0.1;
+      animated_scale_cos = (Math.cos(time*0.001) + (Math.PI * 0.37)) * 0.1;
 
       const hitTestResults = frame.getHitTestResults(hitTestSource);
       if (hitTestResults.length > 0 && reticle !== null) {
@@ -169,7 +170,11 @@ async function activateXR() {
       if (clone !== null && models.length >= 1) {
         for (let i = 0; i < models.length; i++) {
           if (models[i] !== null) {
-            models[i].scale.y = animated_scale;
+            if (i % 2 === 1) { // This way we get different animations depending on the order in which the models have been added
+              models[i].scale.y = animated_scale_cos;  
+            } else {
+              models[i].scale.y = animated_scale_sin;
+            }
             models[i].updateMatrixWorld(true);
           }
         }
