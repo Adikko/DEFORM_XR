@@ -86,6 +86,8 @@ h2 {
     height: 100%;
     position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
 }
 
@@ -131,10 +133,6 @@ h2 {
     justify-content: center;
     position: absolute;
     right: 0px;
-    @media (orientation: landscape) {
-        right: 10vw;
-        bottom: 0px;
-    }
 }
 
 .deform_logo_divider {
