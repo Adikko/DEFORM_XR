@@ -69,9 +69,9 @@ async function activateXR() {
   deform_dom_overlay.appendChild(instructionDiv);
   instructionDiv.classList.toggle("deform_dom_overlay_instructionDiv");
   if (window.navigator.language === "pl-PL") { // Checking the user language, so I can display the instruction in the appropriate tongue
-    instructionDiv.innerHTML = '<div class="deform_dom_overlay_instructionDiv_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><div class="deform_dom_overlay_instructionDiv_text">Poruszaj telefonem, by zeskanować swoje otoczenie</div>'
+    instructionDiv.innerHTML = '<div class="deform_dom_overlay_instructionDiv_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><div class="deform_dom_overlay_instructionDiv_text">Poruszaj telefonem, by zeskanować swoje otoczenie. Dotknij ekranu, by dodać element.</div>'
   } else {
-    instructionDiv.innerHTML = '<div class="deform_dom_overlay_instructionDiv_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><div class="deform_dom_overlay_instructionDiv_text">Move your phone to scan your surroudings</div>'
+    instructionDiv.innerHTML = '<div class="deform_dom_overlay_instructionDiv_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><div class="deform_dom_overlay_instructionDiv_text">Move your phone to scan your surroudings. Tap the screen to add an element.</div>'
   }
 
   // Initialize a WebXR session using "immersive-ar".
