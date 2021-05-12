@@ -521,6 +521,10 @@ h2 {
   bottom: 10vh;
 }
 
+.deform_dom_overlay_instructionDiv_icon {
+  width: 25vw;
+}
+
 .deform_dom_overlay_instructionDiv_icon svg {
   -webkit-animation: dom_overlay_phone 2s infinite;
           animation: dom_overlay_phone 2s infinite;
