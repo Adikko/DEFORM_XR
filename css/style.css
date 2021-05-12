@@ -169,39 +169,18 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40vw;
+  height: 80vh;
+  width: 80vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  right: 30vw;
-  top: 30vh;
+  right: 0px;
+  bottom: 10vh;
+  top: 12vh;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_menu {
-    padding: 0px;
-    margin: 0px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 80vh;
-    width: 80vw;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: absolute;
-    right: 0px;
-    bottom: 10vh;
-    top: 12vh;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_menu {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -210,33 +189,31 @@ h2 {
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_menu {
     height: 80vh;
     width: 80vw;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_menu {
     right: 10vw;
     bottom: 0px;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_logo_divider {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
+.deform_logo_divider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_logo_divider {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -245,83 +222,30 @@ h2 {
   }
 }
 
-.deform_logo_empty {
-  display: none;
-}
-
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_logo_empty {
-    padding: 10vw;
-    width: 10vw;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 3;
-    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
-            box-shadow: 0px 0px 0px 10px #d04747 inset;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
-  .deform_logo_empty {
-    display: none;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
-  .deform_logo_empty {
-    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
-            box-shadow: 0px 0px 0px 10px #D28DFA inset;
-  }
-}
-
 .deform_logo {
+  padding: 10vw;
+  width: 10vw;
+  background-color: rgba(147, 250, 165, 0.9);
   z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 5vw 25vw 5vw 5vw;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_logo {
-    padding: 10vw;
-    width: 10vw;
-    background-color: rgba(147, 250, 165, 0.9);
-    z-index: 3;
-    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
-            box-shadow: 0px 0px 0px 10px #d04747 inset;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_logo {
     padding: 5vw;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_logo {
     width: 8vw;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .deform_logo {
     background-color: rgba(70, 22, 97, 0.9);
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
-  .deform_logo {
-    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
-            box-shadow: 0px 0px 0px 10px #D28DFA inset;
   }
 }
 
@@ -343,71 +267,12 @@ h2 {
 }
 
 .deform_xr_instructions_mobile {
-  display: none;
-}
-
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_xr_instructions_mobile {
-    -webkit-transform: translate(0px, -10px);
-            transform: translate(0px, -10px);
-    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
-            box-shadow: 0px 0px 0px 10px #d04747 inset;
-    background-color: rgba(147, 250, 165, 0.9);
-    padding: 10vw 20vw 10vw 10vw;
-    width: 30vw;
-    left: 0;
-    right: 0;
-    bottom: 0vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    -webkit-transform: translate(-10px, 0px);
-            transform: translate(-10px, 0px);
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
-  .deform_xr_instructions_mobile {
-    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
-            box-shadow: 0px 0px 0px 10px #D28DFA inset;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
-  .deform_xr_instructions_mobile {
-    background-color: rgba(70, 22, 97, 0.9);
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    padding: 5vw 5vw 5vw 5vw;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    width: 20vw;
-    height: 20vw;
-  }
-}
-
-.deform_xr_instructions_desktop {
   -webkit-transform: translate(0px, -10px);
           transform: translate(0px, -10px);
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
   background-color: rgba(147, 250, 165, 0.9);
-  padding: 5vw;
+  padding: 10vw 20vw 10vw 10vw;
   width: 30vw;
   left: 0;
   right: 0;
@@ -421,22 +286,36 @@ h2 {
           flex-direction: column;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_xr_instructions_desktop {
-    display: none;
+@media (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    -webkit-transform: translate(-10px, 0px);
+            transform: translate(-10px, 0px);
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .deform_xr_instructions_desktop {
+  .deform_xr_instructions_mobile {
     -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
             box-shadow: 0px 0px 0px 10px #D28DFA inset;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .deform_xr_instructions_desktop {
+  .deform_xr_instructions_mobile {
     background-color: rgba(70, 22, 97, 0.9);
+  }
+}
+
+@media (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    padding: 5vw 5vw 5vw 5vw;
+  }
+}
+
+@media (orientation: landscape) {
+  .deform_xr_instructions_mobile {
+    width: 20vw;
+    height: 20vw;
   }
 }
 
@@ -477,55 +356,52 @@ h2 {
 }
 
 .deform_button_empty {
-  display: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 30vw;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_button_empty {
-    background-color: rgba(0, 0, 0, 0);
-    width: 30vw;
-    border: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_button_empty {
     display: none;
   }
 }
 
 .deform_button_container {
-  display: none;
+  -webkit-transform: translate(0px, -10px);
+          transform: translate(0px, -10px);
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #d04747;
+  -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
+          box-shadow: 0px 0px 0px 10px #d04747 inset;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
+@media (orientation: landscape) {
   .deform_button_container {
-    width: 30vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background-color: #d04747;
-    -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
-            box-shadow: 0px 0px 0px 10px #d04747 inset;
+    -webkit-transform: translate(-10px, 0px);
+            transform: translate(-10px, 0px);
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .deform_button_container {
     width: 30vw;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .deform_button_container {
     background-color: #D28DFA;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .deform_button_container {
     -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
             box-shadow: 0px 0px 0px 10px #D28DFA inset;
@@ -533,40 +409,34 @@ h2 {
 }
 
 .deform_xr_button {
-  display: none;
+  background-color: #d04747;
+  border: none;
+  color: #93FAA5;
+  height: 30vw;
+  padding: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: calc(2vh + 2vw);
+  font-family: "Poppins-Black", sans-serif;
+  -webkit-animation: rotateButton 7s infinite;
+          animation: rotateButton 7s infinite;
+  float: right;
 }
 
-@media only screen and (hover: none) and (pointer: coarse) {
-  .deform_xr_button {
-    background-color: #d04747;
-    border: none;
-    color: #93FAA5;
-    height: 30vw;
-    padding: 10vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: calc(2vh + 2vw);
-    font-family: "Poppins-Black", sans-serif;
-    -webkit-animation: rotateButton 7s infinite;
-            animation: rotateButton 7s infinite;
-    float: right;
-  }
-}
-
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .deform_xr_button {
     background-color: #D28DFA;
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .deform_xr_button {
     color: #461661;
   }

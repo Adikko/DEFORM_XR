@@ -46,28 +46,22 @@
                 <path class="deform_landing_logoLandingPage_svg" d="M419.09,510.28V520H201.58v-9.73Z" transform="translate(-201.58 -347.68)"/>
             </svg>
           </div>
-          <div class="deform_logo_empty"></div>
         </div>
       </a>
       <div class="deform_xr_instructions_mobile">
         <h1 id="welcome">Welcome to our augmented reality experience!</h1>
-        <ul>
+        <ul id="instructions">
           <li>
-            <h2 id="instruction_1">Remember to move your phone a bit to help us place objects in your space.</h2>
-            <h2 id="instruction_2">After we build an understanding of your surroundings, we'll display a reticle.</h2>
-            <h2 id="instruction_3">Tap the screen to add objects to your scene!</h2>
+            <h2 id="instruction_1">BY DEFORM.SPACE</h2>
+          </li>
+          <li>
+            <h2 id="instruction_2">2021</h2>
           </li>
         </ul>
       </div>
-      <div class="deform_xr_instructions_desktop">
-        <h1 id="unsupported">Sorry!</h1>
-        <h2 id="unsupported_explanation">This experience works only on a WebXR-enabled browser (i.e. Chrome Mobile)</h2>
-      </div>
       <div class="deform_button">
         <div class="deform_button_empty"></div>
-        <div class="deform_button_container">
-          <button class="deform_xr_button" onclick="activateXR()">Start!</button>
-        </div>
+        <div class="deform_button_container"></div>
       </div>
     </div>
   </div>
@@ -80,7 +74,7 @@
   <script src="./index.js"></script>
   <script src="./landing.js"></script>
   <script src="./loading.js"></script>
-  <script src="./PL_language.js"></script>
+  <script src="./xr_checker.js"></script>
 
 </body>
 </html>
