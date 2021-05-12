@@ -668,7 +668,7 @@ h2 {
 .deform_dom_overlay_instructionDiv_text {
   width: 30vw;
   font-family: "Poppins-Medium", sans-serif;
-  font-size: calc(1.5vh + 1.5vw);
+  font-size: calc(1vh + 1vw);
   color: #000;
 }
 
