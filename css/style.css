@@ -224,7 +224,7 @@ h2 {
 
 .deform_logo {
   padding: 10vw;
-  width: 10vw;
+  width: 40vw;
   background-color: rgba(147, 250, 165, 0.9);
   z-index: 3;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
@@ -233,13 +233,14 @@ h2 {
 
 @media (orientation: landscape) {
   .deform_logo {
-    padding: 5vw;
+    padding: 10vw;
   }
 }
 
 @media (orientation: landscape) {
   .deform_logo {
-    width: 8vw;
+    width: 10vw;
+    height: 10vw;
   }
 }
 
@@ -256,12 +257,19 @@ h2 {
   }
 }
 
-.deform_landing_logoLandingPage_svg {
+.deform_logo > svg {
+  width: 10vw;
   fill: #d04747;
 }
 
+@media (orientation: landscape) {
+  .deform_logo > svg {
+    width: 8vw;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
-  .deform_landing_logoLandingPage_svg {
+  .deform_logo > svg {
     fill: #D28DFA;
   }
 }
@@ -314,7 +322,7 @@ h2 {
 
 @media (orientation: landscape) {
   .deform_xr_instructions_mobile {
-    width: 20vw;
+    width: 15vw;
     height: 20vw;
   }
 }
@@ -326,10 +334,12 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (orientation: landscape) {
@@ -346,34 +356,10 @@ h2 {
   }
 }
 
-@media (orientation: landscape) {
-  .deform_button {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.deform_button_empty {
-  background-color: rgba(0, 0, 0, 0);
-  width: 30vw;
-  border: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (orientation: landscape) {
-  .deform_button_empty {
-    display: none;
-  }
-}
-
 .deform_button_container {
   -webkit-transform: translate(0px, -10px);
           transform: translate(0px, -10px);
-  width: 30vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,20 +400,10 @@ h2 {
   color: #93FAA5;
   height: 30vw;
   padding: 10vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: calc(2vh + 2vw);
   font-family: "Poppins-Black", sans-serif;
   -webkit-animation: rotateButton 7s infinite;
           animation: rotateButton 7s infinite;
-  float: right;
 }
 
 @media (prefers-color-scheme: dark) {

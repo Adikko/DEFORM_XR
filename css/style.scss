@@ -149,11 +149,12 @@ h2 {
 .deform_logo {
     padding: 10vw;
     @media (orientation: landscape) {
-        padding: 5vw;
+        padding: 10vw;
     }
-    width: 10vw;
+    width: 40vw;
     @media (orientation: landscape) {
-        width: 8vw;
+        width: 10vw;
+        height: 10vw;
     }
     background-color: rgba($color: #93FAA5, $alpha: 0.9);
     @media (prefers-color-scheme: dark) {
@@ -166,7 +167,11 @@ h2 {
     }   
 }
 
-.deform_landing_logoLandingPage_svg {
+.deform_logo > svg {
+    width: 10vw;
+    @media (orientation: landscape) {
+        width: 8vw;
+    }
     fill: #d04747;
     @media (prefers-color-scheme: dark) {
         fill: #D28DFA;
@@ -192,7 +197,7 @@ h2 {
     }
     width: 30vw;
     @media (orientation: landscape) {
-        width: 20vw;
+        width: 15vw;
         height: 20vw;
     }
     left: 0;
@@ -213,20 +218,8 @@ h2 {
         height: 30vw;
     }
     display: flex;
-    flex-direction: row;
-    @media (orientation: landscape) {
-        flex-direction: column;
-    }
-}
-
-.deform_button_empty {
-    background-color: rgba($color: #000000, $alpha: 0.0);
-    width: 30vw;
-    border: none;
-    display: flex;
-    @media (orientation: landscape) {
-        display: none;
-    }
+    align-items: center;
+    justify-content: center;
 }
 
 .deform_button_container {
@@ -234,7 +227,7 @@ h2 {
     @media (orientation: landscape) {
         transform: translate(-10px, 0px);
     }
-    width: 30vw;
+    width: 60vw;
     @media (orientation: landscape) {
         width: 30vw;
     }
@@ -261,13 +254,9 @@ h2 {
     }
     height: 30vw;
     padding: 10vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     font-size: calc(2vh + 2vw);
     font-family: "Poppins-Black", sans-serif;
     animation: rotateButton 7s infinite;
-    float: right;
 }
 
 #deform_dom_overlay {
