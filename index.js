@@ -102,12 +102,12 @@ async function activateXR() {
   }
 
   // Reticle helps the user with placing the 3D object in the scene
-  const loader = new THREE.GLTFLoader();
-  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
-    reticle = gltf.scene;
-    reticle.visible = false;
-    scene.add(reticle);
-  })
+  reticle = new THREE.Mesh(
+    new THREE.RingGeometry( 0.4, 0.5, 4 ),
+    new THREE.MeshBasicMaterial( { color: 0xffffff, side: THREE.DoubleSide } )
+  );
+  reticle.visible = false;
+  scene.add(reticle);
 
   const MAX_MODELS_COUNT = 5;
   let models = [];
