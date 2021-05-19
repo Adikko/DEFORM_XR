@@ -30,12 +30,6 @@ h1 {
   color: #d04747;
 }
 
-@media (orientation: landscape) {
-  h1 {
-    font-size: calc(0.9vh + 0.9vw);
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   h1 {
     color: #D28DFA;
@@ -46,12 +40,6 @@ h2 {
   font-size: calc(0.8vh + 0.8vw);
   font-family: "Poppins-ExtraLight", sans-serif;
   color: #d04747;
-}
-
-@media (orientation: landscape) {
-  h2 {
-    font-size: calc(0.7vh + 0.7vw);
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -166,6 +154,38 @@ h2 {
   }
 }
 
+.deform_menu_landscape {
+  padding: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
+          box-shadow: 0px 0px 0px 10px #d04747 inset;
+  font-size: calc(1.5vh + 1.5vw);
+  font-family: "Poppins-Black", sans-serif;
+  color: #d04747;
+}
+
+@media (orientation: portrait) {
+  .deform_menu_landscape {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_menu_landscape {
+    -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
+            box-shadow: 0px 0px 0px 10px #D28DFA inset;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .deform_menu_landscape {
+    color: #D28DFA;
+  }
+}
+
 .deform_menu {
   padding: 0px;
   margin: 0px;
@@ -187,17 +207,7 @@ h2 {
 
 @media (orientation: landscape) {
   .deform_menu {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_menu {
-    height: 80vh;
-    width: 80vw;
+    display: none;
   }
 }
 
@@ -211,15 +221,6 @@ h2 {
           flex-direction: row;
 }
 
-@media (orientation: landscape) {
-  .deform_logo_divider {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
 .deform_logo {
   padding: 10vw;
   width: 40vw;
@@ -227,19 +228,6 @@ h2 {
   z-index: 3;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
-}
-
-@media (orientation: landscape) {
-  .deform_logo {
-    padding: 10vw;
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_logo {
-    width: 10vw;
-    height: 10vw;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -258,12 +246,6 @@ h2 {
 .deform_logo > svg {
   width: 10vw;
   fill: #d04747;
-}
-
-@media (orientation: landscape) {
-  .deform_logo > svg {
-    width: 8vw;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -292,13 +274,6 @@ h2 {
           flex-direction: column;
 }
 
-@media (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    -webkit-transform: translate(-10px, 0px);
-            transform: translate(-10px, 0px);
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .deform_xr_instructions_mobile {
     -webkit-box-shadow: 0px 0px 0px 10px #D28DFA inset;
@@ -309,19 +284,6 @@ h2 {
 @media (prefers-color-scheme: dark) {
   .deform_xr_instructions_mobile {
     background-color: rgba(70, 22, 97, 0.9);
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    padding: 5vw 5vw 5vw 5vw;
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_xr_instructions_mobile {
-    width: 15vw;
-    height: 20vw;
   }
 }
 
@@ -340,20 +302,6 @@ h2 {
           justify-content: center;
 }
 
-@media (orientation: landscape) {
-  .deform_button {
-    -webkit-transform: translate(-10px, 0px);
-            transform: translate(-10px, 0px);
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_button {
-    width: 30vw;
-    height: 30vw;
-  }
-}
-
 .deform_button_container {
   -webkit-transform: translate(0px, -10px);
           transform: translate(0px, -10px);
@@ -364,19 +312,6 @@ h2 {
   background-color: #d04747;
   -webkit-box-shadow: 0px 0px 0px 10px #d04747 inset;
           box-shadow: 0px 0px 0px 10px #d04747 inset;
-}
-
-@media (orientation: landscape) {
-  .deform_button_container {
-    -webkit-transform: translate(-10px, 0px);
-            transform: translate(-10px, 0px);
-  }
-}
-
-@media (orientation: landscape) {
-  .deform_button_container {
-    width: 30vw;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

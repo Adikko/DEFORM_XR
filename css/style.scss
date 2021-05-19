@@ -23,9 +23,6 @@
 
 h1 {
     font-size: calc(1vh + 1vw);
-    @media (orientation: landscape) {
-        font-size: calc(0.9vh + 0.9vw);
-    }
     font-family: "Poppins-Medium", sans-serif;
     color: #d04747;
     @media (prefers-color-scheme: dark) {
@@ -35,9 +32,6 @@ h1 {
 
 h2 {
     font-size: calc(0.8vh + 0.8vw);
-    @media (orientation: landscape) {
-        font-size: calc(0.7vh + 0.7vw);
-    }
     font-family: "Poppins-ExtraLight", sans-serif;
     color: #d04747;
     @media (prefers-color-scheme: dark) {
@@ -116,20 +110,35 @@ h2 {
     }
 }
 
+.deform_menu_landscape {
+    @media (orientation: portrait) {
+        display: none;
+    }
+    padding: 10vh;
+    display: flex;
+    position: absolute;
+    box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
+    @media (prefers-color-scheme: dark) {
+        box-shadow:0px 0px 0px 10px #D28DFA inset;
+    }
+    font-size: calc(1.5vh + 1.5vw);
+    font-family: "Poppins-Black", sans-serif;
+    color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
+}
+
 .deform_menu {
+    @media (orientation: landscape) {
+        display: none;
+    }
     padding: 0px;
     margin: 0px;
     display: flex;
     flex-direction: column;
-    @media (orientation: landscape) {
-        flex-direction: row;
-    }
     height: 80vh;
     width: 80vw;
-    @media (orientation: landscape) {
-        height: 80vh;
-        width: 80vw;
-    }
     justify-content: center;
     position: absolute;
     right: 0px;
@@ -138,21 +147,11 @@ h2 {
 .deform_logo_divider {
     display: flex;
     flex-direction: row;
-    @media (orientation: landscape) {
-        flex-direction: column;
-    }
 }
 
 .deform_logo {
     padding: 10vw;
-    @media (orientation: landscape) {
-        padding: 10vw;
-    }
     width: 40vw;
-    @media (orientation: landscape) {
-        width: 10vw;
-        height: 10vw;
-    }
     background-color: rgba($color: #93FAA5, $alpha: 0.9);
     @media (prefers-color-scheme: dark) {
         background-color: rgba($color: #461661, $alpha: 0.9);
@@ -166,9 +165,6 @@ h2 {
 
 .deform_logo > svg {
     width: 10vw;
-    @media (orientation: landscape) {
-        width: 8vw;
-    }
     fill: #d04747;
     @media (prefers-color-scheme: dark) {
         fill: #D28DFA;
@@ -177,9 +173,6 @@ h2 {
 
 .deform_xr_instructions_mobile {
     transform: translate(0px, -10px); //hide the underside of the border
-    @media (orientation: landscape) {
-        transform: translate(-10px, 0px);
-    }
     box-shadow:0px 0px 0px 10px #d04747 inset; //make the border go inside the div    
     @media (prefers-color-scheme: dark) {
         box-shadow:0px 0px 0px 10px #D28DFA inset;
@@ -189,14 +182,7 @@ h2 {
         background-color: rgba($color: #461661, $alpha: 0.9);
     }
     padding: 10vw 20vw 10vw 10vw;
-    @media (orientation: landscape) {
-        padding: 5vw 5vw 5vw 5vw;
-    }
     width: 30vw;
-    @media (orientation: landscape) {
-        width: 15vw;
-        height: 20vw;
-    }
     left: 0;
     right: 0;
     bottom: 0vh;
@@ -206,14 +192,7 @@ h2 {
 
 .deform_button {
     transform: translate(0px, -10px); //hide the underside of the border
-    @media (orientation: landscape) {
-        transform: translate(-10px, 0px);
-    }
     width: 60vw;
-    @media (orientation: landscape) {
-        width: 30vw;
-        height: 30vw;
-    }
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,13 +200,7 @@ h2 {
 
 .deform_button_container {
     transform: translate(0px, -10px); //hide the underside of the border
-    @media (orientation: landscape) {
-        transform: translate(-10px, 0px);
-    }
     width: 60vw;
-    @media (orientation: landscape) {
-        width: 30vw;
-    }
     display: flex;
     background-color: #d04747;
     @media (prefers-color-scheme: dark) {
